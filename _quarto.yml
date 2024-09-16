@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - creating_repo.qmd
     - summary.qmd
     - references.qmd
 
