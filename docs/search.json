@@ -1,30 +1,32 @@
 [
   {
-    "objectID": "creating_repo.html",
-    "href": "creating_repo.html",
-    "title": "Creating a repository",
-    "section": "",
-    "text": "Creating a repository\nFirst, you have to create a GitHub repository within the GHE organization. You can do this here.\nChoose a name for your repository, make it public if you’re data is not confidential/sensitive and click on “Create repository”. For now, you don’t need a README, .gitignore file or a license. You’ll add these at a later stage.\nOnce the repo is initialized, go back to RStudio and check if the devtools and usethis packages are installed. If not, please install/update them now as some of their functions are needed in the next steps.\nLet’s create an R Project. Go to File &gt; New Project &gt; New Directory &gt; R Package using devtools.\n\nCopy and paste the name you chose for your GitHub repo as the directory name and select a location on your computer for the sub-directory.\n\n\n\n\n\n\nNote\n\n\n\nFor the next steps we assume that you’ve already configured Git on your computer. If not, please make sure to do that before proceeding.\n\n\nWith your project set up locally and a new repository online, it’s time to connect the two. To do this, switch to the Terminal (the tab next to Console in RStuido) and run the following commands one after the other.\n\n\n\n\n\n\nWarning\n\n\n\nReplace REPO with the name of your newly created repository.\n\n\ngit remote add origin \"https://github.com/Global-Health-Engineering/REPO.git\" \n\ngit branch -M main\n\ngit push -u origin main\nIf everything went well, you’re local repository (on your computer) should now be connected to the remote repository (on GitHub) which allows you to push and pull changes and to invite collaborators."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Hi!",
+    "title": "Data Publishing at GHE",
     "section": "",
-    "text": "Hi!\nThis book is designed to simplify the publication of data at Global Health Engineering (GHE) Group. It requires some familiarity with Git(Hub) and R(Studio), but is organised as a step-by-step guide to simplify the individual steps from an empty repository to a data package with a website as much as possible.\nThis book is a constant work in progress. As we publish more data, we learn more and these insights flow back into this book. So if something is unclear or incomplete, we invite you to open an issue here to address it."
+    "text": "Hi!\nThis book is designed to simplify the publication of data at Global Health Engineering (GHE) Group. It requires some familiarity with Git(Hub) and R(Studio), but is organised as a step-by-step guide to simplify the individual steps from an empty repository to a data package with a website as much as possible.\nThis book is a constant work in progress. As we publish more data, we learn more and these insights flow back into this book. So if something is unclear or incomplete, we invite you to open an issue here to address it.",
+    "crumbs": [
+      "Hi!"
+    ]
   },
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "Introduction",
+    "title": "1  Introduction",
     "section": "",
-    "text": "Introduction\nSome more text to be added here."
+    "text": "Some more text to be added here.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
+    "objectID": "creating_repo.html",
+    "href": "creating_repo.html",
+    "title": "2  Creating a repository",
     "section": "",
-    "text": "References"
+    "text": "First, you have to create a GitHub repository within the GHE organization. You can do this here.\nChoose a name for your repository, make it public if you’re data is not confidential/sensitive and click on “Create repository”. For now, you don’t need a README, .gitignore file or a license. You’ll add these at a later stage.\nOnce the repo is initialized, go back to RStudio and check if the devtools and usethis packages are installed. If not, please install/update them now as some of their functions are needed in the next steps.\nLet’s create an R Project. Go to File &gt; New Project &gt; New Directory &gt; R Package using devtools.\n\nCopy and paste the name you chose for your GitHub repo as the directory name and select a location on your computer for the sub-directory.\n\n\n\n\n\n\nNote\n\n\n\nFor the next steps we assume that you’ve already configured Git on your computer. If not, please make sure to do that before proceeding.\n\n\nWith your project set up locally and a new repository online, it’s time to connect the two. To do this, switch to the Terminal (the tab next to Console in RStuido) and run the following commands one after the other.\n\n\n\n\n\n\nWarning\n\n\n\nReplace REPO with the name of your newly created repository.\n\n\ngit remote add origin \"https://github.com/Global-Health-Engineering/REPO.git\" \n\ngit branch -M main\n\ngit push -u origin main\nIf everything went well, you’re local repository (on your computer) should now be connected to the remote repository (on GitHub) which allows you to push and pull changes and to invite collaborators.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Creating a repository</span>"
+    ]
   }
 ]
