@@ -4,7 +4,17 @@ project:
 
 book:
   title: "Data Publishing at GHE"
-  date: ""
+  page-footer: 
+    left: |
+      Data Publishing at GHE was written by the Opence Science Team at GHE
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  
+  site-url: https://global-health-engineering.github.io/ghedatapublishing/
+  repo-url: https://github.com/Global-Health-Engineering/ghedatapublishing
+  repo-branch: main
+  repo-actions: [edit, issue]
+
   chapters:
     - index.qmd
     - intro.qmd
@@ -18,6 +28,4 @@ format:
     theme: cosmo
   pdf:
     documentclass: scrreprt
-
-editor: visual
-
+    

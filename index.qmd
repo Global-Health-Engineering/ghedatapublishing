@@ -1,5 +1,5 @@
 # Hi! {.unnumbered}
 
-This book is designed to simplify the publication of data at Global Health Engineering (GHE) Group. It requires some familiarity with Git(Hub) and R(Studio), but is organised as a step-by-step guide to simplify the individual steps from an empty repository to a data package with a website as much as possible. 
+This book is designed to simplify the publication of data at [Global Health Engineering](https://ghe.ethz.ch/) (GHE). It requires some familiarity with Git(Hub) and R(Studio), but is organised as a step-by-step guide to make the individual steps starting from an empty repository to publishing a data package with its own website website as easy as possible. 
 
-This book is a constant work in progress. As we publish more data, we learn more and these insights flow back into this book. So if something is unclear or incomplete, we invite you to open an issue [here](https://github.com/Global-Health-Engineering/ghedatapublishing/issues) to address it.
+This book is a work in progress. As we publish more data, we learn more and these insights flow back into this book. If something is unclear or incomplete, please open an issue [here](https://github.com/Global-Health-Engineering/ghedatapublishing/issues) and we'll try to address it.
