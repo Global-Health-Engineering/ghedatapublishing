@@ -4,7 +4,7 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1 + 1\n\n[1] 3\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "Dieser Guide ist chronologisch aufgebaut. In Chapter 2",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -44,9 +44,9 @@
     "href": "index.html",
     "title": "Data Publishing at GHE",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Hi!\nThis book is designed to simplify the publication of data at Global Health Engineering (GHE) Group. It requires some familiarity with Git(Hub) and R(Studio), but is organised as a step-by-step guide to simplify the individual steps from an empty repository to a data package with a website as much as possible.\nThis book is a constant work in progress. As we publish more data, we learn more and these insights flow back into this book. So if something is unclear or incomplete, we invite you to open an issue here to address it.",
     "crumbs": [
-      "Preface"
+      "Hi!"
     ]
   }
 ]

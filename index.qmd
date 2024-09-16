@@ -1,9 +1,5 @@
-# Preface {.unnumbered}
+# Hi! {.unnumbered}
 
-This is a Quarto book.
+This book is designed to simplify the publication of data at Global Health Engineering (GHE) Group. It requires some familiarity with Git(Hub) and R(Studio), but is organised as a step-by-step guide to simplify the individual steps from an empty repository to a data package with a website as much as possible. 
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-```{r}
-1 + 1
-```
+This book is a constant work in progress. As we publish more data, we learn more and these insights flow back into this book. So if something is unclear or incomplete, we invite you to open an issue [here](https://github.com/Global-Health-Engineering/ghedatapublishing/issues) to address it.

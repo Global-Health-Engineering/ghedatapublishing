@@ -1,4 +1,4 @@
-# Creating a repository
+# Creating a repository {#sec-repository}
 
 First, you have to create a GitHub repository within the GHE organization. You can do this [here](https://github.com/Global-Health-Engineering).
 
