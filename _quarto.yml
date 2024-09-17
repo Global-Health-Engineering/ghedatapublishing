@@ -4,9 +4,12 @@ project:
 
 book:
   title: "Data Publishing at GHE"
+  search: true
+  cover-image: owd-cover.png
+  favicon: owd-cover.png
   page-footer: 
     left: |
-      Data Publishing at GHE was written by the Opence Science Team at GHE
+      Data Publishing at GHE was written by the <a href="https://openwashdata.org/about#team">Open Science Team</a> at GHE
     right: |
       This book was built with <a href="https://quarto.org/">Quarto</a>.
   
@@ -14,18 +17,19 @@ book:
   repo-url: https://github.com/Global-Health-Engineering/ghedatapublishing
   repo-branch: main
   repo-actions: [edit, issue]
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook]
 
   chapters:
     - index.qmd
-    - intro.qmd
     - creating_repo.qmd
-    - references.qmd
-
-bibliography: references.bib
+    - data_preparation.qmd
+    - data_documentation.qmd
+    - data_publication.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: pulse
   pdf:
     documentclass: scrreprt
     

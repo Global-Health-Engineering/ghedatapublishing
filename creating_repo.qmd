@@ -22,7 +22,7 @@ With your project set up locally and a new repository online, it's time to conne
 Replace `REPO` with the name of your newly created repository.
 :::
 
-```         
+```r         
 git remote add origin "https://github.com/Global-Health-Engineering/REPO.git" 
 
 git branch -M main

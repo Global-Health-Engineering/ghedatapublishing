@@ -1,0 +1,78 @@
+# Preparing your dataset {#sec-datapreparation}
+
+## Setting Up Your Raw Data Directory
+
+### Create a Directory for Raw Data
+- Open your R console within your project.
+- Type and execute the following command:
+
+  ```r
+  setup_rawdata()
+  ```
+  
+- This command will create a new directory called `data-raw` in your project folder.
+
+### Move Your Raw Data Files
+- Locate your raw data files on your computer.
+- Copy or move these files into the newly created `data-raw` directory.
+
+### Update Your GitHub Repository
+- In RStudio, locate the "Git" tab in the top-right panel.
+- As a good practice, click "Pull" first to ensure you have the latest changes.
+- In the Git tab, you'll see a list of changed files. Tick the checkboxes next to all the files you've added or modified.
+- Click the "Commit" button.
+- In the new window, enter a descriptive commit message explaining what you've added (e.g., "Add raw data files to data-raw directory").
+- Finally, click the "Push" button to upload your changes to GitHub.
+
+## Clean and Process Your Raw Data
+
+### Edit the Data Processing Script
+- Open the file `data-raw/data_processing.R` in your RStudio editor.
+- This script is pre-populated with some code, but you'll need to modify it to suit your specific data cleaning needs.
+- Add your own R code to clean and process your raw data files.
+- Make sure your code reads the files from the `data-raw` directory and outputs a tidy version of your data.
+
+### Run the Data Processing Script
+- Once you've finished editing `data_processing.R`, run the entire script.
+- You can do this by clicking "Source" at the top of the editor window, or by selecting all the code and clicking "Run".
+- This will execute your data cleaning process and should result in a tidy version of your dataset.
+
+### Update GitHub Again
+- Return to the "Git" tab in RStudio.
+- You should see your modified `data_processing.R` file and possibly new output files.
+- Commit these changes with a meaningful commit message (e.g., "Clean and process raw data").
+- Push your changes to GitHub.
+
+## Creating a Data Dictionary
+
+### Set Up the Dictionary Template
+- In your R console, execute the following command:
+
+  ```r
+  setup_dictionary()
+  ```
+  
+- This will create a new file called `dictionary.csv` in your `data-raw` directory.
+
+### Fill in the Data Dictionary
+- Open `data-raw/dictionary.csv` in a spreadsheet program like Excel or in RStudio's data viewer.
+- You'll see columns for each dataset and variable in your tidy data.
+- Focus on the "description" column:
+  - For each row (representing a variable), provide a clear and concise description of what that variable represents.
+  - Include information like units of measurement, possible values, or any other relevant details.
+- Save your changes to `dictionary.csv`.
+
+### Update GitHub with Your Data Dictionary
+- Once again, go to the "Git" tab in RStudio.
+- You should see the modified `dictionary.csv` file.
+- Commit these changes with a message like "Add data dictionary".
+- Push your changes to GitHub.
+
+## Final Check
+- Review your GitHub repository online to ensure all your changes have been uploaded correctly.
+- You should now have:
+  - A `data-raw` directory with your original data files
+  - A `data_processing.R` script that cleans your data
+  - A `dictionary.csv` file describing your tidy dataset
+
+Congratulations! You've now prepared your dataset and created a data dictionary, all while maintaining version control with Git and GitHub.

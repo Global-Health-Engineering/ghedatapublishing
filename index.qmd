@@ -1,5 +1,13 @@
-# Hi! {.unnumbered}
+# Welcome {.unnumbered}
 
-This book is designed to simplify the publication of data at [Global Health Engineering](https://ghe.ethz.ch/) (GHE). It requires some familiarity with Git(Hub) and R(Studio), but is organised as a step-by-step guide to make the individual steps starting from an empty repository to publishing a data package with its own website website as easy as possible. 
+Publishing data is surprisingly challenging, especially when trying to meet certain standards. While technically published, an Excel workbook with multiple tabs buried in an online archive is hardly practical to use. In other words, it falls short of being findable, accessible, interoperable, and reproducible — or FAIR for short.
+
+GHE aims to publish all its data in line with FAIR principles. While this goal is admirable in theory, it's often tricky to implement in practice. How do you ensure data interoperability across different operating systems and platforms? What makes data more or less discoverable? Moreover, data comes in countless forms. At GHE, we collect data from sensors, samples, and surveys. How can we organize these diverse sources coherently?
+
+This guide aims to provide a detailed walkthrough of our data publication pipeline. What began as scattered documents and resources for publishing R packages within the open science team has evolved into a comprehensive guide accessible to all team members, empowering them to publish their own data.
+
+Our guide builds on [`washr`](https://github.com/openwashdata-dev/washr), an R package developed by the open science team for swift data publication. The package emerged from the need to streamline certain steps when publishing the numerous datasets collected during GHE's openwashdata academy.
+
+The guide follows a chronological structure, starting from an empty repository and culminating in the publication of data as a website. @sec-repository introduces version control, guiding readers through setting up both local and remote repositories to track all development steps. @sec-datapreparation focuses on transforming the dataset into a tidy format. @sec-datadocumentation covers the documentation of the tidy dataset. Finally, @sec-datapublication explains how users can create a website to showcase their dataset.
 
 This book is a work in progress. As we publish more data, we learn more and these insights flow back into this book. If something is unclear or incomplete, please open an issue [here](https://github.com/Global-Health-Engineering/ghedatapublishing/issues) and we'll try to address it.

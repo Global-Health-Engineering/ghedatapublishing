@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Publishing at GHE - References</title>
+<title>Data Publishing at GHE - 4&nbsp; Publishing your dataset</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +64,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./creating_repo.html" rel="prev">
+<link href="./data_documentation.html" rel="prev">
+<link href="./owd-cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -99,7 +115,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_publication.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publishing your dataset</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -115,8 +131,42 @@ div.csl-indent {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Publishing at GHE</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/Global-Health-Engineering/ghedatapublishing" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Publishing-at-GHE.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Publishing-at-GHE.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
     </div>
       </div>
@@ -130,25 +180,31 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hi!</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./creating_repo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Creating a repository</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Creating a repository</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">References</span></a>
+  <a href="./data_preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preparing your dataset</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_documentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Documenting your dataset</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_publication.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publishing your dataset</span></span></a>
   </div>
 </li>
     </ul>
@@ -157,14 +213,35 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#creating-and-editing-the-readme" id="toc-creating-and-editing-the-readme" class="nav-link active" data-scroll-target="#creating-and-editing-the-readme"><span class="header-section-number">4.1</span> Creating and Editing the README</a>
+  <ul class="collapse">
+  <li><a href="#initialize-the-readme" id="toc-initialize-the-readme" class="nav-link" data-scroll-target="#initialize-the-readme"><span class="header-section-number">4.1.1</span> Initialize the README</a></li>
+  <li><a href="#edit-the-readme" id="toc-edit-the-readme" class="nav-link" data-scroll-target="#edit-the-readme"><span class="header-section-number">4.1.2</span> Edit the README</a></li>
+  <li><a href="#create-a-data-visualization" id="toc-create-a-data-visualization" class="nav-link" data-scroll-target="#create-a-data-visualization"><span class="header-section-number">4.1.3</span> Create a Data Visualization</a></li>
+  <li><a href="#build-the-readme" id="toc-build-the-readme" class="nav-link" data-scroll-target="#build-the-readme"><span class="header-section-number">4.1.4</span> Build the README</a></li>
+  <li><a href="#update-github" id="toc-update-github" class="nav-link" data-scroll-target="#update-github"><span class="header-section-number">4.1.5</span> Update GitHub</a></li>
+  </ul></li>
+  <li><a href="#setting-up-the-package-website" id="toc-setting-up-the-package-website" class="nav-link" data-scroll-target="#setting-up-the-package-website"><span class="header-section-number">4.2</span> Setting Up the Package Website</a>
+  <ul class="collapse">
+  <li><a href="#initialize-the-website" id="toc-initialize-the-website" class="nav-link" data-scroll-target="#initialize-the-website"><span class="header-section-number">4.2.1</span> Initialize the Website</a></li>
+  <li><a href="#document-check-and-install-the-package" id="toc-document-check-and-install-the-package" class="nav-link" data-scroll-target="#document-check-and-install-the-package"><span class="header-section-number">4.2.2</span> Document, Check, and Install the Package</a></li>
+  <li><a href="#prepare-for-github-pages" id="toc-prepare-for-github-pages" class="nav-link" data-scroll-target="#prepare-for-github-pages"><span class="header-section-number">4.2.3</span> Prepare for GitHub Pages</a></li>
+  <li><a href="#update-github-with-website-files" id="toc-update-github-with-website-files" class="nav-link" data-scroll-target="#update-github-with-website-files"><span class="header-section-number">4.2.4</span> Update GitHub with Website Files</a></li>
+  <li><a href="#set-up-github-pages" id="toc-set-up-github-pages" class="nav-link" data-scroll-target="#set-up-github-pages"><span class="header-section-number">4.2.5</span> Set Up GitHub Pages</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/data_publication.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span id="sec-datapublication" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publishing your dataset</span></span></h1>
 </div>
 
 
@@ -181,11 +258,115 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" role="list" style="display: none">
+<section id="creating-and-editing-the-readme" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="creating-and-editing-the-readme"><span class="header-section-number">4.1</span> Creating and Editing the README</h2>
+<section id="initialize-the-readme" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="initialize-the-readme"><span class="header-section-number">4.1.1</span> Initialize the README</h3>
+<ul>
+<li><p>Open your R console within your project.</p></li>
+<li><p>Execute the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_readme</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>If you have time and want to create an example article for your package, you can use:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_readme</span>(<span class="at">has_example =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="edit-the-readme" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="edit-the-readme"><span class="header-section-number">4.1.2</span> Edit the README</h3>
+<ul>
+<li>Locate and open the <code>README.Rmd</code> file in your project directory.</li>
+<li>Edit each section of the README to provide relevant information about your package. Typical sections include:
+<ul>
+<li>Package Name and Brief Description</li>
+<li>Installation Instructions</li>
+<li>Basic Usage</li>
+<li>Features</li>
+<li>Example</li>
+</ul></li>
+</ul>
+</section>
+<section id="create-a-data-visualization" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="create-a-data-visualization"><span class="header-section-number">4.1.3</span> Create a Data Visualization</h3>
+<ul>
+<li><p>In the “Example” section of your README, create at least one plot that showcases your data.</p></li>
+<li><p>Here’s a basic example using ggplot2 (make sure to adapt this to your specific data):</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(yourpackagename)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(your_data, <span class="fu">aes</span>(<span class="at">x =</span> variable1, <span class="at">y =</span> variable2)) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Example Plot from YourPackageName"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="build-the-readme" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="build-the-readme"><span class="header-section-number">4.1.4</span> Build the README</h3>
+<ul>
+<li><p>After finishing your edits, run the following command in the R console:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">build_readme</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>This command will convert your <code>README.Rmd</code> to a <code>README.md</code> file, which GitHub will display on your repository’s main page.</p></li>
+</ul>
+</section>
+<section id="update-github" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="update-github"><span class="header-section-number">4.1.5</span> Update GitHub</h3>
+<ul>
+<li>In RStudio, go to the “Git” tab.</li>
+<li>Stage the new and modified README files.</li>
+<li>Commit with a message like “Add and update README”.</li>
+<li>Push the changes to GitHub.</li>
+</ul>
+</section>
+</section>
+<section id="setting-up-the-package-website" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="setting-up-the-package-website"><span class="header-section-number">4.2</span> Setting Up the Package Website</h2>
+<section id="initialize-the-website" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="initialize-the-website"><span class="header-section-number">4.2.1</span> Initialize the Website</h3>
+<ul>
+<li><p>In the R console, run:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_website</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>When prompted, select “No” to avoid overriding the existing <code>_pkgdown.yml</code> file. This preserves the openwashdata style for your website.</p></li>
+</ul>
+</section>
+<section id="document-check-and-install-the-package" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="document-check-and-install-the-package"><span class="header-section-number">4.2.2</span> Document, Check, and Install the Package</h3>
+<p>Run the following commands:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">check</span>()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These steps ensure your package documentation is up-to-date and the package installs correctly.</p>
+</section>
+<section id="prepare-for-github-pages" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="prepare-for-github-pages"><span class="header-section-number">4.2.3</span> Prepare for GitHub Pages</h3>
+<ul>
+<li>Open the <code>.gitignore</code> file in your project directory.</li>
+<li>Find the line that says <code>docs</code> and remove it. This allows the <code>docs</code> folder (which contains your website files) to be tracked by Git.</li>
+<li>Save the <code>.gitignore</code> file.</li>
+</ul>
+</section>
+<section id="update-github-with-website-files" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="update-github-with-website-files"><span class="header-section-number">4.2.4</span> Update GitHub with Website Files</h3>
+<ul>
+<li>Go to the “Git” tab in RStudio.</li>
+<li>You should see new files in the <code>docs/</code> directory and the modified <code>.gitignore</code> file.</li>
+<li>Stage all these changes.</li>
+<li>Commit with a message like “Add pkgdown website files”.</li>
+<li>Push the changes to GitHub.</li>
+</ul>
+</section>
+<section id="set-up-github-pages" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="set-up-github-pages"><span class="header-section-number">4.2.5</span> Set Up GitHub Pages</h3>
+<ul>
+<li>Go to your GitHub repository in a web browser.</li>
+<li>Click on “Settings” &gt; “Pages”.</li>
+<li>Under “Source”, select the branch where your <code>docs/</code> folder is (usually “main” or “master”).</li>
+<li>Set the folder to <code>/docs</code>.</li>
+<li>Click “Save”.</li>
+</ul>
+<p>Your package website should now be live at <code>https://yourusername.github.io/yourrepositoryname/</code>.</p>
+<p>Remember, if you make significant changes to your package or documentation, you may need to rebuild the website using <code>pkgdown::build_site()</code> and push the updated <code>docs/</code> folder to GitHub.</p>
 
-</div>
 
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -599,8 +780,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./creating_repo.html" class="pagination-link" aria-label="Creating a repository">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Creating a repository</span></span>
+      <a href="./data_documentation.html" class="pagination-link" aria-label="Documenting your dataset">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Documenting your dataset</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -610,11 +791,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Data Publishing at GHE was written by the Opence Science Team at GHE</p>
+<p>Data Publishing at GHE was written by the <a href="https://openwashdata.org/about#team">Open Science Team</a> at GHE</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/data_publication.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

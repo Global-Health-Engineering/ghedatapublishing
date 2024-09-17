@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Publishing at GHE</title>
+<title>Data Publishing at GHE - 2&nbsp; Preparing your dataset</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./creating_repo.html" rel="next">
+<link href="./data_documentation.html" rel="next">
+<link href="./creating_repo.html" rel="prev">
 <link href="./owd-cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -81,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_preparation.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preparing your dataset</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -145,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -157,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_preparation.html" class="sidebar-item-text sidebar-link">
+  <a href="./data_preparation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preparing your dataset</span></span></a>
   </div>
 </li>
@@ -183,16 +218,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#setting-up-your-raw-data-directory" id="toc-setting-up-your-raw-data-directory" class="nav-link active" data-scroll-target="#setting-up-your-raw-data-directory"><span class="header-section-number">2.1</span> Setting Up Your Raw Data Directory</a>
+  <ul class="collapse">
+  <li><a href="#create-a-directory-for-raw-data" id="toc-create-a-directory-for-raw-data" class="nav-link" data-scroll-target="#create-a-directory-for-raw-data"><span class="header-section-number">2.1.1</span> Create a Directory for Raw Data</a></li>
+  <li><a href="#move-your-raw-data-files" id="toc-move-your-raw-data-files" class="nav-link" data-scroll-target="#move-your-raw-data-files"><span class="header-section-number">2.1.2</span> Move Your Raw Data Files</a></li>
+  <li><a href="#update-your-github-repository" id="toc-update-your-github-repository" class="nav-link" data-scroll-target="#update-your-github-repository"><span class="header-section-number">2.1.3</span> Update Your GitHub Repository</a></li>
+  </ul></li>
+  <li><a href="#clean-and-process-your-raw-data" id="toc-clean-and-process-your-raw-data" class="nav-link" data-scroll-target="#clean-and-process-your-raw-data"><span class="header-section-number">2.2</span> Clean and Process Your Raw Data</a>
+  <ul class="collapse">
+  <li><a href="#edit-the-data-processing-script" id="toc-edit-the-data-processing-script" class="nav-link" data-scroll-target="#edit-the-data-processing-script"><span class="header-section-number">2.2.1</span> Edit the Data Processing Script</a></li>
+  <li><a href="#run-the-data-processing-script" id="toc-run-the-data-processing-script" class="nav-link" data-scroll-target="#run-the-data-processing-script"><span class="header-section-number">2.2.2</span> Run the Data Processing Script</a></li>
+  <li><a href="#update-github-again" id="toc-update-github-again" class="nav-link" data-scroll-target="#update-github-again"><span class="header-section-number">2.2.3</span> Update GitHub Again</a></li>
+  </ul></li>
+  <li><a href="#creating-a-data-dictionary" id="toc-creating-a-data-dictionary" class="nav-link" data-scroll-target="#creating-a-data-dictionary"><span class="header-section-number">2.3</span> Creating a Data Dictionary</a>
+  <ul class="collapse">
+  <li><a href="#set-up-the-dictionary-template" id="toc-set-up-the-dictionary-template" class="nav-link" data-scroll-target="#set-up-the-dictionary-template"><span class="header-section-number">2.3.1</span> Set Up the Dictionary Template</a></li>
+  <li><a href="#fill-in-the-data-dictionary" id="toc-fill-in-the-data-dictionary" class="nav-link" data-scroll-target="#fill-in-the-data-dictionary"><span class="header-section-number">2.3.2</span> Fill in the Data Dictionary</a></li>
+  <li><a href="#update-github-with-your-data-dictionary" id="toc-update-github-with-your-data-dictionary" class="nav-link" data-scroll-target="#update-github-with-your-data-dictionary"><span class="header-section-number">2.3.3</span> Update GitHub with Your Data Dictionary</a></li>
+  </ul></li>
+  <li><a href="#final-check" id="toc-final-check" class="nav-link" data-scroll-target="#final-check"><span class="header-section-number">2.4</span> Final Check</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/data_preparation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Publishing at GHE</h1>
+<h1 class="title"><span id="sec-datapreparation" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preparing your dataset</span></span></h1>
 </div>
 
 
@@ -209,15 +262,110 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1><p><img src="owd-cover.png" title="Data Publishing at GHE" class="quarto-cover-image img-fluid"></p>
-<p>Publishing data is surprisingly challenging, especially when trying to meet certain standards. While technically published, an Excel workbook with multiple tabs buried in an online archive is hardly practical to use. In other words, it falls short of being findable, accessible, interoperable, and reproducible — or FAIR for short.</p>
-<p>GHE aims to publish all its data in line with FAIR principles. While this goal is admirable in theory, it’s often tricky to implement in practice. How do you ensure data interoperability across different operating systems and platforms? What makes data more or less discoverable? Moreover, data comes in countless forms. At GHE, we collect data from sensors, samples, and surveys. How can we organize these diverse sources coherently?</p>
-<p>This guide aims to provide a detailed walkthrough of our data publication pipeline. What began as scattered documents and resources for publishing R packages within the open science team has evolved into a comprehensive guide accessible to all team members, empowering them to publish their own data.</p>
-<p>Our guide builds on <a href="https://github.com/openwashdata-dev/washr"><code>washr</code></a>, an R package developed by the open science team for swift data publication. The package emerged from the need to streamline certain steps when publishing the numerous datasets collected during GHE’s openwashdata academy.</p>
-<p>The guide follows a chronological structure, starting from an empty repository and culminating in the publication of data as a website. <a href="creating_repo.html" class="quarto-xref"><span>1&nbsp; Creating a repository</span></a> introduces version control, guiding readers through setting up both local and remote repositories to track all development steps. <a href="data_preparation.html" class="quarto-xref"><span>2&nbsp; Preparing your dataset</span></a> focuses on transforming the dataset into a tidy format. <a href="data_documentation.html" class="quarto-xref"><span>3&nbsp; Documenting your dataset</span></a> covers the documentation of the tidy dataset. Finally, <a href="data_publication.html" class="quarto-xref"><span>4&nbsp; Publishing your dataset</span></a> explains how users can create a website to showcase their dataset.</p>
-<p>This book is a work in progress. As we publish more data, we learn more and these insights flow back into this book. If something is unclear or incomplete, please open an issue <a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues">here</a> and we’ll try to address it.</p>
+<section id="setting-up-your-raw-data-directory" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="setting-up-your-raw-data-directory"><span class="header-section-number">2.1</span> Setting Up Your Raw Data Directory</h2>
+<section id="create-a-directory-for-raw-data" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="create-a-directory-for-raw-data"><span class="header-section-number">2.1.1</span> Create a Directory for Raw Data</h3>
+<ul>
+<li><p>Open your R console within your project.</p></li>
+<li><p>Type and execute the following command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_rawdata</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>This command will create a new directory called <code>data-raw</code> in your project folder.</p></li>
+</ul>
+</section>
+<section id="move-your-raw-data-files" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="move-your-raw-data-files"><span class="header-section-number">2.1.2</span> Move Your Raw Data Files</h3>
+<ul>
+<li>Locate your raw data files on your computer.</li>
+<li>Copy or move these files into the newly created <code>data-raw</code> directory.</li>
+</ul>
+</section>
+<section id="update-your-github-repository" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="update-your-github-repository"><span class="header-section-number">2.1.3</span> Update Your GitHub Repository</h3>
+<ul>
+<li>In RStudio, locate the “Git” tab in the top-right panel.</li>
+<li>As a good practice, click “Pull” first to ensure you have the latest changes.</li>
+<li>In the Git tab, you’ll see a list of changed files. Tick the checkboxes next to all the files you’ve added or modified.</li>
+<li>Click the “Commit” button.</li>
+<li>In the new window, enter a descriptive commit message explaining what you’ve added (e.g., “Add raw data files to data-raw directory”).</li>
+<li>Finally, click the “Push” button to upload your changes to GitHub.</li>
+</ul>
+</section>
+</section>
+<section id="clean-and-process-your-raw-data" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="clean-and-process-your-raw-data"><span class="header-section-number">2.2</span> Clean and Process Your Raw Data</h2>
+<section id="edit-the-data-processing-script" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="edit-the-data-processing-script"><span class="header-section-number">2.2.1</span> Edit the Data Processing Script</h3>
+<ul>
+<li>Open the file <code>data-raw/data_processing.R</code> in your RStudio editor.</li>
+<li>This script is pre-populated with some code, but you’ll need to modify it to suit your specific data cleaning needs.</li>
+<li>Add your own R code to clean and process your raw data files.</li>
+<li>Make sure your code reads the files from the <code>data-raw</code> directory and outputs a tidy version of your data.</li>
+</ul>
+</section>
+<section id="run-the-data-processing-script" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="run-the-data-processing-script"><span class="header-section-number">2.2.2</span> Run the Data Processing Script</h3>
+<ul>
+<li>Once you’ve finished editing <code>data_processing.R</code>, run the entire script.</li>
+<li>You can do this by clicking “Source” at the top of the editor window, or by selecting all the code and clicking “Run”.</li>
+<li>This will execute your data cleaning process and should result in a tidy version of your dataset.</li>
+</ul>
+</section>
+<section id="update-github-again" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="update-github-again"><span class="header-section-number">2.2.3</span> Update GitHub Again</h3>
+<ul>
+<li>Return to the “Git” tab in RStudio.</li>
+<li>You should see your modified <code>data_processing.R</code> file and possibly new output files.</li>
+<li>Commit these changes with a meaningful commit message (e.g., “Clean and process raw data”).</li>
+<li>Push your changes to GitHub.</li>
+</ul>
+</section>
+</section>
+<section id="creating-a-data-dictionary" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="creating-a-data-dictionary"><span class="header-section-number">2.3</span> Creating a Data Dictionary</h2>
+<section id="set-up-the-dictionary-template" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="set-up-the-dictionary-template"><span class="header-section-number">2.3.1</span> Set Up the Dictionary Template</h3>
+<ul>
+<li><p>In your R console, execute the following command:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_dictionary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>This will create a new file called <code>dictionary.csv</code> in your <code>data-raw</code> directory.</p></li>
+</ul>
+</section>
+<section id="fill-in-the-data-dictionary" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="fill-in-the-data-dictionary"><span class="header-section-number">2.3.2</span> Fill in the Data Dictionary</h3>
+<ul>
+<li>Open <code>data-raw/dictionary.csv</code> in a spreadsheet program like Excel or in RStudio’s data viewer.</li>
+<li>You’ll see columns for each dataset and variable in your tidy data.</li>
+<li>Focus on the “description” column:
+<ul>
+<li>For each row (representing a variable), provide a clear and concise description of what that variable represents.</li>
+<li>Include information like units of measurement, possible values, or any other relevant details.</li>
+</ul></li>
+<li>Save your changes to <code>dictionary.csv</code>.</li>
+</ul>
+</section>
+<section id="update-github-with-your-data-dictionary" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="update-github-with-your-data-dictionary"><span class="header-section-number">2.3.3</span> Update GitHub with Your Data Dictionary</h3>
+<ul>
+<li>Once again, go to the “Git” tab in RStudio.</li>
+<li>You should see the modified <code>dictionary.csv</code> file.</li>
+<li>Commit these changes with a message like “Add data dictionary”.</li>
+<li>Push your changes to GitHub.</li>
+</ul>
+</section>
+</section>
+<section id="final-check" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="final-check"><span class="header-section-number">2.4</span> Final Check</h2>
+<ul>
+<li>Review your GitHub repository online to ensure all your changes have been uploaded correctly.</li>
+<li>You should now have:
+<ul>
+<li>A <code>data-raw</code> directory with your original data files</li>
+<li>A <code>data_processing.R</code> script that cleans your data</li>
+<li>A <code>dictionary.csv</code> file describing your tidy dataset</li>
+</ul></li>
+</ul>
+<p>Congratulations! You’ve now prepared your dataset and created a data dictionary, all while maintaining version control with Git and GitHub.</p>
 
 
 </section>
@@ -634,10 +782,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./creating_repo.html" class="pagination-link" aria-label="Creating a repository">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Creating a repository</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./creating_repo.html" class="pagination-link" aria-label="Creating a repository">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Creating a repository</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./data_documentation.html" class="pagination-link" aria-label="Documenting your dataset">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Documenting your dataset</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -649,7 +800,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/data_preparation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

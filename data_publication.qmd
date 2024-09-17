@@ -1,0 +1,90 @@
+# Publishing your dataset {#sec-datapublication}
+
+## Creating and Editing the README
+
+### Initialize the README
+- Open your R console within your project.
+- Execute the following command:
+  ```r
+  setup_readme()
+  ```
+- If you have time and want to create an example article for your package, you can use:
+  ```r
+  setup_readme(has_example = TRUE)
+  ```
+
+### Edit the README
+- Locate and open the `README.Rmd` file in your project directory.
+- Edit each section of the README to provide relevant information about your package. Typical sections include:
+  - Package Name and Brief Description
+  - Installation Instructions
+  - Basic Usage
+  - Features
+  - Example
+
+### Create a Data Visualization
+- In the "Example" section of your README, create at least one plot that showcases your data.
+- Here's a basic example using ggplot2 (make sure to adapt this to your specific data):
+  ```r
+  library(ggplot2)
+  library(yourpackagename)
+
+  ggplot(your_data, aes(x = variable1, y = variable2)) +
+    geom_point() +
+    theme_minimal() +
+    labs(title = "Example Plot from YourPackageName")
+  ```
+
+### Build the README
+- After finishing your edits, run the following command in the R console:
+  ```r
+  build_readme()
+  ```
+- This command will convert your `README.Rmd` to a `README.md` file, which GitHub will display on your repository's main page.
+
+### Update GitHub
+- In RStudio, go to the "Git" tab.
+- Stage the new and modified README files.
+- Commit with a message like "Add and update README".
+- Push the changes to GitHub.
+
+## Setting Up the Package Website
+
+### Initialize the Website
+- In the R console, run:
+  ```r
+  setup_website()
+  ```
+- When prompted, select "No" to avoid overriding the existing `_pkgdown.yml` file. This preserves the openwashdata style for your website.
+
+### Document, Check, and Install the Package
+Run the following commands:
+```r
+devtools::document()
+devtools::check()
+devtools::install()
+```
+These steps ensure your package documentation is up-to-date and the package installs correctly.
+
+### Prepare for GitHub Pages
+- Open the `.gitignore` file in your project directory.
+- Find the line that says `docs` and remove it. This allows the `docs` folder (which contains your website files) to be tracked by Git.
+- Save the `.gitignore` file.
+
+### Update GitHub with Website Files
+- Go to the "Git" tab in RStudio.
+- You should see new files in the `docs/` directory and the modified `.gitignore` file.
+- Stage all these changes.
+- Commit with a message like "Add pkgdown website files".
+- Push the changes to GitHub.
+
+### Set Up GitHub Pages
+- Go to your GitHub repository in a web browser.
+- Click on "Settings" > "Pages".
+- Under "Source", select the branch where your `docs/` folder is (usually "main" or "master").
+- Set the folder to `/docs`.
+- Click "Save".
+
+Your package website should now be live at `https://yourusername.github.io/yourrepositoryname/`.
+
+Remember, if you make significant changes to your package or documentation, you may need to rebuild the website using `pkgdown::build_site()` and push the updated `docs/` folder to GitHub.

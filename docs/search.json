@@ -4,29 +4,129 @@
     "href": "index.html",
     "title": "Data Publishing at GHE",
     "section": "",
-    "text": "Hi!\nThis book is designed to simplify the publication of data at Global Health Engineering (GHE). It requires some familiarity with Git(Hub) and R(Studio), but is organised as a step-by-step guide to make the individual steps starting from an empty repository to publishing a data package with its own website website as easy as possible.\nThis book is a work in progress. As we publish more data, we learn more and these insights flow back into this book. If something is unclear or incomplete, please open an issue here and we’ll try to address it.",
+    "text": "Welcome\nPublishing data is surprisingly challenging, especially when trying to meet certain standards. While technically published, an Excel workbook with multiple tabs buried in an online archive is hardly practical to use. In other words, it falls short of being findable, accessible, interoperable, and reproducible — or FAIR for short.\nGHE aims to publish all its data in line with FAIR principles. While this goal is admirable in theory, it’s often tricky to implement in practice. How do you ensure data interoperability across different operating systems and platforms? What makes data more or less discoverable? Moreover, data comes in countless forms. At GHE, we collect data from sensors, samples, and surveys. How can we organize these diverse sources coherently?\nThis guide aims to provide a detailed walkthrough of our data publication pipeline. What began as scattered documents and resources for publishing R packages within the open science team has evolved into a comprehensive guide accessible to all team members, empowering them to publish their own data.\nOur guide builds on washr, an R package developed by the open science team for swift data publication. The package emerged from the need to streamline certain steps when publishing the numerous datasets collected during GHE’s openwashdata academy.\nThe guide follows a chronological structure, starting from an empty repository and culminating in the publication of data as a website. 1  Creating a repository introduces version control, guiding readers through setting up both local and remote repositories to track all development steps. 2  Preparing your dataset focuses on transforming the dataset into a tidy format. 3  Documenting your dataset covers the documentation of the tidy dataset. Finally, 4  Publishing your dataset explains how users can create a website to showcase their dataset.\nThis book is a work in progress. As we publish more data, we learn more and these insights flow back into this book. If something is unclear or incomplete, please open an issue here and we’ll try to address it.",
     "crumbs": [
-      "Hi!"
-    ]
-  },
-  {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "TBD.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "Welcome"
     ]
   },
   {
     "objectID": "creating_repo.html",
     "href": "creating_repo.html",
-    "title": "2  Creating a repository",
+    "title": "1  Creating a repository",
     "section": "",
     "text": "First, you have to create a GitHub repository within the GHE organization. You can do this here.\nChoose a name for your repository, make it public if you’re data is not confidential/sensitive and click on “Create repository”. For now, you don’t need a README, .gitignore file or a license. You’ll add these at a later stage.\nOnce the repo is initialized, go back to RStudio and check if the devtools and usethis packages are installed. If not, please install/update them now as some of their functions are needed in the next steps.\nLet’s create an R Project. Go to File &gt; New Project &gt; New Directory &gt; R Package using devtools.\n\nCopy and paste the name you chose for your GitHub repo as the directory name and select a location on your computer for the sub-directory.\n\n\n\n\n\n\nNote\n\n\n\nFor the next steps we assume that you’ve already configured Git on your computer. If not, please make sure to do that before proceeding.\n\n\nWith your project set up locally and a new repository online, it’s time to connect the two. To do this, switch to the Terminal (the tab next to Console in RStudio) and run the following commands one after the other.\n\n\n\n\n\n\nWarning\n\n\n\nReplace REPO with the name of your newly created repository.\n\n\ngit remote add origin \"https://github.com/Global-Health-Engineering/REPO.git\" \n\ngit branch -M main\n\ngit push -u origin main\nIf everything went well, you’re local repository (on your computer) should now be connected to the remote repository (on GitHub) which allows you to push and pull changes and to invite collaborators.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Creating a repository</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Creating a repository</span>"
+    ]
+  },
+  {
+    "objectID": "data_preparation.html",
+    "href": "data_preparation.html",
+    "title": "2  Preparing your dataset",
+    "section": "",
+    "text": "2.1 Setting Up Your Raw Data Directory",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preparing your dataset</span>"
+    ]
+  },
+  {
+    "objectID": "data_preparation.html#setting-up-your-raw-data-directory",
+    "href": "data_preparation.html#setting-up-your-raw-data-directory",
+    "title": "2  Preparing your dataset",
+    "section": "",
+    "text": "2.1.1 Create a Directory for Raw Data\n\nOpen your R console within your project.\nType and execute the following command:\nsetup_rawdata()\nThis command will create a new directory called data-raw in your project folder.\n\n\n\n2.1.2 Move Your Raw Data Files\n\nLocate your raw data files on your computer.\nCopy or move these files into the newly created data-raw directory.\n\n\n\n2.1.3 Update Your GitHub Repository\n\nIn RStudio, locate the “Git” tab in the top-right panel.\nAs a good practice, click “Pull” first to ensure you have the latest changes.\nIn the Git tab, you’ll see a list of changed files. Tick the checkboxes next to all the files you’ve added or modified.\nClick the “Commit” button.\nIn the new window, enter a descriptive commit message explaining what you’ve added (e.g., “Add raw data files to data-raw directory”).\nFinally, click the “Push” button to upload your changes to GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preparing your dataset</span>"
+    ]
+  },
+  {
+    "objectID": "data_preparation.html#clean-and-process-your-raw-data",
+    "href": "data_preparation.html#clean-and-process-your-raw-data",
+    "title": "2  Preparing your dataset",
+    "section": "2.2 Clean and Process Your Raw Data",
+    "text": "2.2 Clean and Process Your Raw Data\n\n2.2.1 Edit the Data Processing Script\n\nOpen the file data-raw/data_processing.R in your RStudio editor.\nThis script is pre-populated with some code, but you’ll need to modify it to suit your specific data cleaning needs.\nAdd your own R code to clean and process your raw data files.\nMake sure your code reads the files from the data-raw directory and outputs a tidy version of your data.\n\n\n\n2.2.2 Run the Data Processing Script\n\nOnce you’ve finished editing data_processing.R, run the entire script.\nYou can do this by clicking “Source” at the top of the editor window, or by selecting all the code and clicking “Run”.\nThis will execute your data cleaning process and should result in a tidy version of your dataset.\n\n\n\n2.2.3 Update GitHub Again\n\nReturn to the “Git” tab in RStudio.\nYou should see your modified data_processing.R file and possibly new output files.\nCommit these changes with a meaningful commit message (e.g., “Clean and process raw data”).\nPush your changes to GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preparing your dataset</span>"
+    ]
+  },
+  {
+    "objectID": "data_preparation.html#creating-a-data-dictionary",
+    "href": "data_preparation.html#creating-a-data-dictionary",
+    "title": "2  Preparing your dataset",
+    "section": "2.3 Creating a Data Dictionary",
+    "text": "2.3 Creating a Data Dictionary\n\n2.3.1 Set Up the Dictionary Template\n\nIn your R console, execute the following command:\nsetup_dictionary()\nThis will create a new file called dictionary.csv in your data-raw directory.\n\n\n\n2.3.2 Fill in the Data Dictionary\n\nOpen data-raw/dictionary.csv in a spreadsheet program like Excel or in RStudio’s data viewer.\nYou’ll see columns for each dataset and variable in your tidy data.\nFocus on the “description” column:\n\nFor each row (representing a variable), provide a clear and concise description of what that variable represents.\nInclude information like units of measurement, possible values, or any other relevant details.\n\nSave your changes to dictionary.csv.\n\n\n\n2.3.3 Update GitHub with Your Data Dictionary\n\nOnce again, go to the “Git” tab in RStudio.\nYou should see the modified dictionary.csv file.\nCommit these changes with a message like “Add data dictionary”.\nPush your changes to GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preparing your dataset</span>"
+    ]
+  },
+  {
+    "objectID": "data_preparation.html#final-check",
+    "href": "data_preparation.html#final-check",
+    "title": "2  Preparing your dataset",
+    "section": "2.4 Final Check",
+    "text": "2.4 Final Check\n\nReview your GitHub repository online to ensure all your changes have been uploaded correctly.\nYou should now have:\n\nA data-raw directory with your original data files\nA data_processing.R script that cleans your data\nA dictionary.csv file describing your tidy dataset\n\n\nCongratulations! You’ve now prepared your dataset and created a data dictionary, all while maintaining version control with Git and GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preparing your dataset</span>"
+    ]
+  },
+  {
+    "objectID": "data_documentation.html",
+    "href": "data_documentation.html",
+    "title": "3  Documenting your dataset",
+    "section": "",
+    "text": "3.1 Setting Up and Writing Documentation with Roxygen",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Documenting your dataset</span>"
+    ]
+  },
+  {
+    "objectID": "data_documentation.html#setting-up-and-writing-documentation-with-roxygen",
+    "href": "data_documentation.html#setting-up-and-writing-documentation-with-roxygen",
+    "title": "3  Documenting your dataset",
+    "section": "",
+    "text": "3.1.1 Initialize Roxygen Documentation\n\nOpen your R console within your project.\nExecute the following command:\nsetup_roxygen()\nThis command will create documentation files in the R/ folder of your project.\n\n\n\n3.1.2 Write Documentation\n\nNavigate to the R/ folder in your project.\nOpen each documentation file (they will have a .R extension).\nFor each file, write a human-readable title and description about the dataset.\nUse Roxygen comments (starting with #’) to document your data. For example:\n#' Title of Your Dataset\n#'\n#' A brief description of what the dataset contains and its purpose.\n#'\n#' @format A data frame with X rows and Y columns:\n#' \\describe{\n#'   \\item{column1}{Description of column1}\n#'   \\item{column2}{Description of column2}\n#'   ...\n#' }\n#' @source Where the data comes from (if applicable)\n\"dataset_name\"\n\n\n\n3.1.3 Update GitHub Repository\n\nIn RStudio, go to the “Git” tab.\nStage all changed files by checking the boxes next to them.\nClick “Commit”.\nWrite a meaningful commit message (e.g., “Add Roxygen documentation for dataset”).\nClick “Push” to update your GitHub repository.\n\n\n\n3.1.4 Document, Check, and Install the Package\nRun the following commands in the R console:\ndevtools::document()\ndevtools::check()\ndevtools::install()\nThese commands will: - Generate documentation from your Roxygen comments - Check for any issues in your package - Install the package locally\nNote: You may see a warning about the license, which we’ll address in the next section.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Documenting your dataset</span>"
+    ]
+  },
+  {
+    "objectID": "data_documentation.html#updating-the-description-file",
+    "href": "data_documentation.html#updating-the-description-file",
+    "title": "3  Documenting your dataset",
+    "section": "3.2 Updating the DESCRIPTION File",
+    "text": "3.2 Updating the DESCRIPTION File\n\n3.2.1 Add Yourself as Author\nRun the following command in the R console, replacing the placeholders with your information:\nuse_author(\n  given = \"Your First Name\", \n  family = \"Your Last Name\", \n  role = c(\"aut\", \"cre\"), \n  email = \"your.email@example.com\",\n  comment = c(ORCID = \"XXXX-XXXX-XXXX-XXXX\")\n)\n\naut means author\ncre means creator/maintainer\n\n\n\n3.2.2 Document Other Contributors\n\nGo to your GitHub repository.\nCreate a new issue titled “Author Information for DESCRIPTION File”.\nIn the issue, list all contributors with their:\n\nFull name\nEmail address\nRole (aut for significant contributions, ctb for smaller contributions)\nORCID (if available)\n\n\n\n\n3.2.3 Add Additional Authors\nFor each additional author, run a command like this:\nuse_author(given = \"Coauthor First Name\", family = \"Coauthor Last Name\", role = \"aut\")\n\n\n3.2.4 Update DESCRIPTION File\n\nOpen the DESCRIPTION file in your project.\nWrite an appropriate Title and Description for your package.\nIn the R console, run:\nupdate_description()\nThis will update other fields in the DESCRIPTION file.\nReview the DESCRIPTION file to ensure all information is correct.\n\n\n\n3.2.5 Final Documentation and Check\nRun these commands again:\ndevtools::document()\ndevtools::check()\ndevtools::install()\nThis process ensures your package is well-documented and ready for use. If you encounter any errors or warnings during this process, don’t hesitate to seek help. The R community is very supportive, and many resources are available online to troubleshoot common issues.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Documenting your dataset</span>"
+    ]
+  },
+  {
+    "objectID": "data_publication.html",
+    "href": "data_publication.html",
+    "title": "4  Publishing your dataset",
+    "section": "",
+    "text": "4.1 Creating and Editing the README",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Publishing your dataset</span>"
+    ]
+  },
+  {
+    "objectID": "data_publication.html#creating-and-editing-the-readme",
+    "href": "data_publication.html#creating-and-editing-the-readme",
+    "title": "4  Publishing your dataset",
+    "section": "",
+    "text": "4.1.1 Initialize the README\n\nOpen your R console within your project.\nExecute the following command:\nsetup_readme()\nIf you have time and want to create an example article for your package, you can use:\nsetup_readme(has_example = TRUE)\n\n\n\n4.1.2 Edit the README\n\nLocate and open the README.Rmd file in your project directory.\nEdit each section of the README to provide relevant information about your package. Typical sections include:\n\nPackage Name and Brief Description\nInstallation Instructions\nBasic Usage\nFeatures\nExample\n\n\n\n\n4.1.3 Create a Data Visualization\n\nIn the “Example” section of your README, create at least one plot that showcases your data.\nHere’s a basic example using ggplot2 (make sure to adapt this to your specific data):\nlibrary(ggplot2)\nlibrary(yourpackagename)\n\nggplot(your_data, aes(x = variable1, y = variable2)) +\n  geom_point() +\n  theme_minimal() +\n  labs(title = \"Example Plot from YourPackageName\")\n\n\n\n4.1.4 Build the README\n\nAfter finishing your edits, run the following command in the R console:\nbuild_readme()\nThis command will convert your README.Rmd to a README.md file, which GitHub will display on your repository’s main page.\n\n\n\n4.1.5 Update GitHub\n\nIn RStudio, go to the “Git” tab.\nStage the new and modified README files.\nCommit with a message like “Add and update README”.\nPush the changes to GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Publishing your dataset</span>"
+    ]
+  },
+  {
+    "objectID": "data_publication.html#setting-up-the-package-website",
+    "href": "data_publication.html#setting-up-the-package-website",
+    "title": "4  Publishing your dataset",
+    "section": "4.2 Setting Up the Package Website",
+    "text": "4.2 Setting Up the Package Website\n\n4.2.1 Initialize the Website\n\nIn the R console, run:\nsetup_website()\nWhen prompted, select “No” to avoid overriding the existing _pkgdown.yml file. This preserves the openwashdata style for your website.\n\n\n\n4.2.2 Document, Check, and Install the Package\nRun the following commands:\ndevtools::document()\ndevtools::check()\ndevtools::install()\nThese steps ensure your package documentation is up-to-date and the package installs correctly.\n\n\n4.2.3 Prepare for GitHub Pages\n\nOpen the .gitignore file in your project directory.\nFind the line that says docs and remove it. This allows the docs folder (which contains your website files) to be tracked by Git.\nSave the .gitignore file.\n\n\n\n4.2.4 Update GitHub with Website Files\n\nGo to the “Git” tab in RStudio.\nYou should see new files in the docs/ directory and the modified .gitignore file.\nStage all these changes.\nCommit with a message like “Add pkgdown website files”.\nPush the changes to GitHub.\n\n\n\n4.2.5 Set Up GitHub Pages\n\nGo to your GitHub repository in a web browser.\nClick on “Settings” &gt; “Pages”.\nUnder “Source”, select the branch where your docs/ folder is (usually “main” or “master”).\nSet the folder to /docs.\nClick “Save”.\n\nYour package website should now be live at https://yourusername.github.io/yourrepositoryname/.\nRemember, if you make significant changes to your package or documentation, you may need to rebuild the website using pkgdown::build_site() and push the updated docs/ folder to GitHub.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Publishing your dataset</span>"
     ]
   }
 ]
