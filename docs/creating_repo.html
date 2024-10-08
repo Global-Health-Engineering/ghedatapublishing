@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Publishing at GHE - 1&nbsp; Creating a repository</title>
+<title>Data Publishing with washr - 1&nbsp; Creating a repository</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,20 +131,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Data Publishing at GHE</a> 
+      <a href="./">Data Publishing with <code>washr</code></a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/Global-Health-Engineering/ghedatapublishing" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Publishing-at-GHE.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Publishing-with-`washr`.pdf">
               <i class="bi bi-bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Publishing-at-GHE.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="./Data-Publishing-with-`washr`.epub">
               <i class="bi bi-bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -199,13 +199,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_documentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Documenting your dataset</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Documenting Your Dataset</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_publication.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publishing your dataset</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publishing Your Dataset</span></span></a>
   </div>
 </li>
     </ul>
@@ -238,11 +238,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>First, you have to create a GitHub repository within the GHE organization. You can do this <a href="https://github.com/Global-Health-Engineering">here</a>.</p>
+<p>First, you have to create a GitHub repository within the GHE organization on GitHub. You can do this <a href="https://github.com/Global-Health-Engineering">here</a>.</p>
 <p>Choose a name for your repository, make it public if you’re data is not confidential/sensitive and click on “Create repository”. For now, you don’t need a README, .gitignore file or a license. You’ll add these at a later stage.</p>
-<p>Once the repo is initialized, go back to RStudio and check if the <code>devtools</code> and <code>usethis</code> packages are installed. If not, please install/update them now as some of their functions are needed in the next steps.</p>
+<p>Once the repository is initialized, go back to RStudio and check if the <code>devtools</code> and <code>usethis</code> packages are installed. If not, please install/update them now as some of their functions are needed in the next steps.</p>
 <p>Let’s create an <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">R Project</a>. Go to <em>File &gt; New Project &gt; New Directory &gt; R Package using devtools</em>.</p>
-<p><img src="images/create_pkg_with_devtools.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/create_pkg_with_devtools.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="border: 1px solid black;"></p>
+</figure>
+</div>
 <p>Copy and paste the name you chose for your GitHub repo as the directory name and select a location on your computer for the sub-directory.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -277,6 +281,11 @@ Warning
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>git push <span class="sc">-</span>u origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If everything went well, you’re local repository (on your computer) should now be connected to the remote repository (on GitHub) which allows you to push and pull changes and to invite collaborators.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/repos.png" class="quarto-figure quarto-figure-center figure-img" style="border: 1px solid black;;width:40.0%;height:40.0%"></p>
+</figure>
+</div>
 
 
 
@@ -706,13 +715,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Data Publishing at GHE was written by the <a href="https://openwashdata.org/about#team">Open Science Team</a> at GHE</p>
+<p>Data Publishing with <code>washr</code> was written by the <a href="https://openwashdata.org/about#team">Open Science Team</a> at GHE</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     <div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/creating_repo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
-<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
+<p>This book was built with <a href="https://quarto.org/">Quarto</a></p>
 </div>
   </div>
 </footer>

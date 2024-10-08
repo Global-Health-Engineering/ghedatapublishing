@@ -3,15 +3,15 @@ project:
   output-dir: docs
 
 book:
-  title: "Data Publishing at GHE"
+  title: "Data Publishing with `washr`"
   search: true
   cover-image: owd-cover.png
   favicon: owd-cover.png
   page-footer: 
     left: |
-      Data Publishing at GHE was written by the <a href="https://openwashdata.org/about#team">Open Science Team</a> at GHE
+      Data Publishing with `washr` was written by the <a href="https://openwashdata.org/about#team">Open Science Team</a> at GHE
     right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a>.
+      This book was built with <a href="https://quarto.org/">Quarto</a>
   
   site-url: https://global-health-engineering.github.io/ghedatapublishing/
   repo-url: https://github.com/Global-Health-Engineering/ghedatapublishing

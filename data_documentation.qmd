@@ -1,60 +1,64 @@
-# Documenting your dataset {#sec-datadocumentation}
+# Documenting Your Dataset {#sec-datadocumentation}
+
+In the next steps, the goal is to document not only the dataset itself but also the functions and the package as a whole. The individual steps are visualized in the figure below.
+
+![](images/documenting.png){fig-align="center" style="border: 1px solid black;"}
 
 ## Setting Up and Writing Documentation with Roxygen
 
-### Initialize Roxygen Documentation
-- Open your R console within your project.
-- Execute the following command:
-  ```r
-  setup_roxygen()
-  ```
-- This command will create documentation files in the `R/` folder of your project.
+To begin documenting your dataset, start by initializing Roxygen documentation. Open your R console within the project and run the following command:
 
-### Write Documentation
-- Navigate to the `R/` folder in your project.
-- Open each documentation file (they will have a `.R` extension).
-- For each file, write a human-readable title and description about the dataset.
-- Use Roxygen comments (starting with #') to document your data. For example:
-  ```r
-  #' Title of Your Dataset
-  #'
-  #' A brief description of what the dataset contains and its purpose.
-  #'
-  #' @format A data frame with X rows and Y columns:
-  #' \describe{
-  #'   \item{column1}{Description of column1}
-  #'   \item{column2}{Description of column2}
-  #'   ...
-  #' }
-  #' @source Where the data comes from (if applicable)
-  "dataset_name"
-  ```
+```r
+setup_roxygen()
+```
 
-### Update GitHub Repository
-- In RStudio, go to the "Git" tab.
-- Stage all changed files by checking the boxes next to them.
-- Click "Commit".
-- Write a meaningful commit message (e.g., "Add Roxygen documentation for dataset").
-- Click "Push" to update your GitHub repository.
+This will create the necessary documentation files in the `R/` folder of your project, setting up the foundation for detailed documentation.
 
-### Document, Check, and Install the Package
-Run the following commands in the R console:
+### Writing Documentation
+
+Once the documentation files are generated, navigate to the `R/` folder in your project. Each file in this folder, with a `.R` extension, represents a dataset or function. Open these files and provide a human-readable title and description using Roxygen comments (lines that start with `#'`). For instance, you could use the following format to document your dataset:
+
+```r
+#' Title of Your Dataset
+#'
+#' A brief description of what the dataset contains and its purpose.
+#'
+#' @format A data frame with X rows and Y columns:
+#' \describe{
+#'   \item{column1}{Description of column1}
+#'   \item{column2}{Description of column2}
+#'   ...
+#' }
+#' @source Where the data comes from (if applicable)
+"dataset_name"
+```
+
+This method allows you to provide clear, concise details about each dataset, ensuring that users understand its structure and purpose.
+
+### Updating Your GitHub Repository
+
+Once you've completed the documentation, it’s time to update your GitHub repository. In RStudio, go to the "Git" tab. Stage all the changed files by checking the boxes next to them, then click "Commit". Write a meaningful commit message, such as "Add Roxygen documentation for dataset", and click "Push" to update your repository with the latest changes.
+
+### Finalizing and Installing the Documentation
+
+Now that your documentation is written, run the following commands in your R console:
+
 ```r
 devtools::document()
 devtools::check()
 devtools::install()
 ```
-These commands will:
-- Generate documentation from your Roxygen comments
-- Check for any issues in your package
-- Install the package locally
 
-Note: You may see a warning about the license, which we'll address in the next section.
+These commands will generate the documentation from your Roxygen comments, check for any issues in the package, and install it locally. If you receive a warning about the license, don’t worry, as it will be addressed in the next section.
 
 ## Updating the DESCRIPTION File
 
-### Add Yourself as Author
-Run the following command in the R console, replacing the placeholders with your information:
+To complete your package documentation, you’ll need to update the `DESCRIPTION` file with author information and other key details.
+
+### Adding Yourself as an Author
+
+In your R console, add yourself as the author and maintainer by running:
+
 ```r
 use_author(
   given = "Your First Name", 
@@ -64,40 +68,37 @@ use_author(
   comment = c(ORCID = "XXXX-XXXX-XXXX-XXXX")
 )
 ```
-- `aut` means author
-- `cre` means creator/maintainer
 
-### Document Other Contributors
-- Go to your GitHub repository.
-- Create a new issue titled "Author Information for DESCRIPTION File".
-- In the issue, list all contributors with their:
-  - Full name
-  - Email address
-  - Role (`aut` for significant contributions, `ctb` for smaller contributions)
-  - ORCID (if available)
+Here, `aut` indicates that you are an author, and `cre` designates you as the creator or maintainer of the package.
 
-### Add Additional Authors
-For each additional author, run a command like this:
+### Documenting Other Contributors
+
+To ensure proper credit is given, create a new issue in your GitHub repository titled "Author Information for DESCRIPTION File". List all contributors, including their full name, email address, role (e.g., `aut` for authors or `ctb` for contributors), and ORCID (if applicable).
+
+For each additional contributor, run a similar command:
+
 ```r
 use_author(given = "Coauthor First Name", family = "Coauthor Last Name", role = "aut")
 ```
 
-### Update DESCRIPTION File
-- Open the `DESCRIPTION` file in your project.
-- Write an appropriate `Title` and `Description` for your package.
-- In the R console, run:
-  ```r
-  update_description()
-  ```
-- This will update other fields in the DESCRIPTION file.
-- Review the `DESCRIPTION` file to ensure all information is correct.
+### Updating the DESCRIPTION File
 
-### Final Documentation and Check
-Run these commands again:
+After adding all contributors, open the `DESCRIPTION` file in your project and ensure the title and description reflect the purpose of your package accurately. Then, in your R console, run:
+
+```r
+update_description()
+```
+
+This will update fields such as version, authors, and dependencies. Review the `DESCRIPTION` file to make sure all information is accurate.
+
+### Final Documentation Check
+
+To complete the process, run the following commands again:
+
 ```r
 devtools::document()
 devtools::check()
 devtools::install()
 ```
 
-This process ensures your package is well-documented and ready for use. If you encounter any errors or warnings during this process, don't hesitate to seek help. The R community is very supportive, and many resources are available online to troubleshoot common issues.
+These steps will ensure your package is fully documented, checked for errors, and ready for use. 
