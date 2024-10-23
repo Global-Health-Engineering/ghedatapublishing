@@ -1,6 +1,9 @@
 project:
   type: book
   output-dir: docs
+  
+execute: 
+  eval: false
 
 book:
   title: "Data Publishing with `washr`"
@@ -26,6 +29,7 @@ book:
     - data_preparation.qmd
     - data_documentation.qmd
     - data_publication.qmd
+    - troubleshooting.qmd
 
 format:
   html:

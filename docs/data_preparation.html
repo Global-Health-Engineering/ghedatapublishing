@@ -208,6 +208,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publishing Your Dataset</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Publishing Your Dataset {#sec-troubleshooting}“</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -257,8 +263,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>As a first step, you need to create a data directory where all datasets are stored in one place. To do this, open your R console within your project and type and execute the following command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(washr)</span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(washr)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_rawdata</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>This command will create a new directory called <code>data-raw</code> in your project folder where you will store all your raw datasets. Copy or move all your files into the newly created <code>data-raw</code> directory.</p>
 <p>Next, you’ll want to have this directory under version control so that you can track your changes.</p>
 <p>In RStudio, locate the “Git” tab in the top-right panel. As a good practice, begin by clicking “Pull” to ensure you have the latest changes. In the Git tab, you will see a list of changed files—tick the checkboxes next to all the files you’ve added or modified. Next, click the “Commit” button. A new window will appear where you can enter a descriptive commit message, explaining what changes you’ve made (for example, “Add raw data files to data-raw directory”). Finally, click the “Push” button to upload your changes to GitHub.</p>

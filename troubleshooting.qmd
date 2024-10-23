@@ -1,0 +1,11 @@
+# Troubleshooting {#sec-troubleshooting}
+
+Although we try to make this guide as detailed as possible, unfortunately we cannot account for all eventualities. That's why we've compiled a list of common issues (and solutions) here.
+
+## Git fails when pushing commit to github
+
+If you want to push large files (e.g. raw datasets) to GitHub, Git may fail. A simple workaround is to increase the buffer size. You can do this with the following line in the terminal. Note that you need to be in the working directory of your project.
+
+```
+git config http.postBuffer 524288000
+```

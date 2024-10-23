@@ -1,5 +1,9 @@
 # Publishing Your Dataset {#sec-datapublication}
 
+```{r, include=FALSE}
+library(washr)
+```
+
 ## Creating and Editing the README
 
 To start documenting your dataset for publication, you first need to set up a README file.
@@ -8,13 +12,14 @@ To start documenting your dataset for publication, you first need to set up a RE
 
 In your R console, within the project directory, run the following command to create a README file:
 
-```r
+```{r}
 setup_readme()
 ```
 
+
 If you want to include an example article for your package, you can use this command instead:
 
-```r
+```{r}
 setup_readme(has_example = TRUE)
 ```
 
@@ -32,7 +37,7 @@ Locate the `README.Rmd` file in your project directory and open it. Edit each se
 
 In the "Example" section of your README, it’s helpful to include at least one plot that showcases your data. For instance, using `ggplot2`, you could create a plot like this (adapt it to fit your specific data):
 
-```r
+```{r}
 library(ggplot2)
 library(yourpackagename)
 
@@ -44,10 +49,10 @@ ggplot(your_data, aes(x = variable1, y = variable2)) +
 
 ### Building the README
 
-Once you’ve completed editing the README, convert it to a markdown file by running:
+Once you’ve completed editing the README, convert it to a Markdown file by running:
 
-```r
-build_readme()
+```{r}
+devtools::build_readme()
 ```
 
 This will generate a `README.md` file, which GitHub displays on your repository's main page.
@@ -64,7 +69,7 @@ To enhance your package's accessibility, you can create a website for it.
 
 Run the following command in your R console:
 
-```r
+```{r}
 setup_website()
 ```
 
@@ -74,7 +79,7 @@ When prompted, choose "No" to prevent overwriting the existing `_pkgdown.yml` fi
 
 Ensure your package is up-to-date by running the following commands:
 
-```r
+```{r}
 devtools::document()
 devtools::check()
 devtools::install()

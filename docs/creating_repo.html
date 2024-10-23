@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -208,6 +174,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publishing Your Dataset</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Troubleshooting</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -238,16 +210,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>First, you have to create a GitHub repository within the GHE organization on GitHub. You can do this <a href="https://github.com/Global-Health-Engineering">here</a>.</p>
-<p>Choose a name for your repository, make it public if you’re data is not confidential/sensitive and click on “Create repository”. For now, you don’t need a README, .gitignore file or a license. You’ll add these at a later stage.</p>
-<p>Once the repository is initialized, go back to RStudio and check if the <code>devtools</code> and <code>usethis</code> packages are installed. If not, please install/update them now as some of their functions are needed in the next steps.</p>
-<p>Let’s create an <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">R Project</a>. Go to <em>File &gt; New Project &gt; New Directory &gt; R Package using devtools</em>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/create_pkg_with_devtools.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="border: 1px solid black;"></p>
-</figure>
-</div>
-<p>Copy and paste the name you chose for your GitHub repo as the directory name and select a location on your computer for the sub-directory.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -258,7 +220,30 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For the next steps we assume that you’ve already configured Git on your computer. If not, please make sure to do that before proceeding.</p>
+<p>The following steps assume that you are a member of GHE on GitHub. If you are not, reach out <a href="https://github.com/Global-Health-Engineering">here</a> so we can create a repository for you.</p>
+</div>
+</div>
+<p>As your very first step, you have to create a new repository within the Global Health Engineering (hereafter referred to as GHE) organization on GitHub. You can do this <a href="https://github.com/Global-Health-Engineering">here</a>.</p>
+<p>Choose a name for your repository, make it public if you’re data is not confidential/sensitive and click on “Create repository”. For now, you don’t need a README, .gitignore file or a license. You’ll add these at a later stage.</p>
+<p>Once the repository is initialized, go back to RStudio and check if the <a href="https://devtools.r-lib.org/"><code>devtools</code></a> and <a href="https://usethis.r-lib.org/"><code>usethis</code></a> packages are installed. If not, please install/update them now as some of their functions are needed in the next steps.</p>
+<p>Next, you have to create an <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">R Project</a>. Go to <em>File &gt; New Project &gt; New Directory &gt; R Package using devtools</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/create_pkg_with_devtools.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="border: 1px solid black;"></p>
+</figure>
+</div>
+<p>Copy and paste the name you chose for your GitHub repository as the directory name and select a location on your computer for your new project.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the next steps, we assume that you’ve already configured Git on your computer. If not, please make sure to do that before proceeding.</p>
 </div>
 </div>
 <p>With your project set up locally and a new repository online, it’s time to connect the two. To do this, switch to the Terminal (the tab next to Console in RStudio) and run the following commands one after the other.</p>
@@ -275,11 +260,11 @@ Warning
 <p>Replace <code>REPO</code> with the name of your newly created repository.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>git remote add origin <span class="st">"https://github.com/Global-Health-Engineering/REPO.git"</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>git branch <span class="sc">-</span>M main</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>git push <span class="sc">-</span>u origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>git remote add origin "https://github.com/Global-Health-Engineering/REPO.git" 
+
+git branch -M main
+
+git push -u origin main</code></pre>
 <p>If everything went well, you’re local repository (on your computer) should now be connected to the remote repository (on GitHub) which allows you to push and pull changes and to invite collaborators.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

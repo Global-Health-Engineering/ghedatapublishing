@@ -208,6 +208,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publishing Your Dataset</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Publishing Your Dataset {#sec-troubleshooting}“</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -265,23 +271,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setting-up-and-writing-documentation-with-roxygen" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="setting-up-and-writing-documentation-with-roxygen"><span class="header-section-number">3.1</span> Setting Up and Writing Documentation with Roxygen</h2>
 <p>To begin documenting your dataset, start by initializing Roxygen documentation. Open your R console within the project and run the following command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_roxygen</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_roxygen</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>This will create the necessary documentation files in the <code>R/</code> folder of your project, setting up the foundation for detailed documentation.</p>
 <section id="writing-documentation" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="writing-documentation"><span class="header-section-number">3.1.1</span> Writing Documentation</h3>
 <p>Once the documentation files are generated, navigate to the <code>R/</code> folder in your project. Each file in this folder, with a <code>.R</code> extension, represents a dataset or function. Open these files and provide a human-readable title and description using Roxygen comments (lines that start with <code>#'</code>). For instance, you could use the following format to document your dataset:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Title of Your Dataset</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#' A brief description of what the dataset contains and its purpose.</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' @format A data frame with X rows and Y columns:</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' \describe{</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#'   \item{column1}{Description of column1}</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#'   \item{column2}{Description of column2}</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#'   ...</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#' }</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#' @source Where the data comes from (if applicable)</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">"dataset_name"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>#' Title of Your Dataset
+#'
+#' A brief description of what the dataset contains and its purpose.
+#'
+#' @format A data frame with X rows and Y columns:
+#' \describe{
+#'   \item{column1}{Description of column1}
+#'   \item{column2}{Description of column2}
+#'   ...
+#' }
+#' @source Where the data comes from (if applicable)
+"dataset_name"</code></pre>
 <p>This method allows you to provide clear, concise details about each dataset, ensuring that users understand its structure and purpose.</p>
 </section>
 <section id="updating-your-github-repository" class="level3" data-number="3.1.2">
@@ -291,9 +299,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="finalizing-and-installing-the-documentation" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="finalizing-and-installing-the-documentation"><span class="header-section-number">3.1.3</span> Finalizing and Installing the Documentation</h3>
 <p>Now that your documentation is written, run the following commands in your R console:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">check</span>()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>These commands will generate the documentation from your Roxygen comments, check for any issues in the package, and install it locally. If you receive a warning about the license, don’t worry, as it will be addressed in the next section.</p>
 </section>
 </section>
@@ -303,33 +313,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="adding-yourself-as-an-author" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="adding-yourself-as-an-author"><span class="header-section-number">3.2.1</span> Adding Yourself as an Author</h3>
 <p>In your R console, add yourself as the author and maintainer by running:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">use_author</span>(</span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">use_author</span>(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">given =</span> <span class="st">"Your First Name"</span>, </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"Your Last Name"</span>, </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">role =</span> <span class="fu">c</span>(<span class="st">"aut"</span>, <span class="st">"cre"</span>), </span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">email =</span> <span class="st">"your.email@example.com"</span>,</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">comment =</span> <span class="fu">c</span>(<span class="at">ORCID =</span> <span class="st">"XXXX-XXXX-XXXX-XXXX"</span>)</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Here, <code>aut</code> indicates that you are an author, and <code>cre</code> designates you as the creator or maintainer of the package.</p>
 </section>
 <section id="documenting-other-contributors" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="documenting-other-contributors"><span class="header-section-number">3.2.2</span> Documenting Other Contributors</h3>
 <p>To ensure proper credit is given, create a new issue in your GitHub repository titled “Author Information for DESCRIPTION File”. List all contributors, including their full name, email address, role (e.g., <code>aut</code> for authors or <code>ctb</code> for contributors), and ORCID (if applicable).</p>
 <p>For each additional contributor, run a similar command:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">use_author</span>(<span class="at">given =</span> <span class="st">"Coauthor First Name"</span>, <span class="at">family =</span> <span class="st">"Coauthor Last Name"</span>, <span class="at">role =</span> <span class="st">"aut"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">use_author</span>(<span class="at">given =</span> <span class="st">"Coauthor First Name"</span>, <span class="at">family =</span> <span class="st">"Coauthor Last Name"</span>, <span class="at">role =</span> <span class="st">"aut"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="updating-the-description-file-1" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="updating-the-description-file-1"><span class="header-section-number">3.2.3</span> Updating the DESCRIPTION File</h3>
 <p>After adding all contributors, open the <code>DESCRIPTION</code> file in your project and ensure the title and description reflect the purpose of your package accurately. Then, in your R console, run:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update_description</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update_description</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>This will update fields such as version, authors, and dependencies. Review the <code>DESCRIPTION</code> file to make sure all information is accurate.</p>
 </section>
 <section id="final-documentation-check" class="level3" data-number="3.2.4">
 <h3 data-number="3.2.4" class="anchored" data-anchor-id="final-documentation-check"><span class="header-section-number">3.2.4</span> Final Documentation Check</h3>
 <p>To complete the process, run the following commands again:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">check</span>()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>These steps will ensure your package is fully documented, checked for errors, and ready for use.</p>
 
 

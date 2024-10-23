@@ -1,5 +1,9 @@
 # Documenting Your Dataset {#sec-datadocumentation}
 
+```{r, include=FALSE}
+library(washr)
+```
+
 In the next steps, the goal is to document not only the dataset itself but also the functions and the package as a whole. The individual steps are visualized in the figure below.
 
 ![](images/documenting.png){fig-align="center" style="border: 1px solid black;"}
@@ -8,7 +12,7 @@ In the next steps, the goal is to document not only the dataset itself but also 
 
 To begin documenting your dataset, start by initializing Roxygen documentation. Open your R console within the project and run the following command:
 
-```r
+```{r}
 setup_roxygen()
 ```
 
@@ -18,7 +22,7 @@ This will create the necessary documentation files in the `R/` folder of your pr
 
 Once the documentation files are generated, navigate to the `R/` folder in your project. Each file in this folder, with a `.R` extension, represents a dataset or function. Open these files and provide a human-readable title and description using Roxygen comments (lines that start with `#'`). For instance, you could use the following format to document your dataset:
 
-```r
+```
 #' Title of Your Dataset
 #'
 #' A brief description of what the dataset contains and its purpose.
@@ -43,7 +47,7 @@ Once you've completed the documentation, it’s time to update your GitHub repos
 
 Now that your documentation is written, run the following commands in your R console:
 
-```r
+```{r}
 devtools::document()
 devtools::check()
 devtools::install()
@@ -59,7 +63,7 @@ To complete your package documentation, you’ll need to update the `DESCRIPTION
 
 In your R console, add yourself as the author and maintainer by running:
 
-```r
+```{r}
 use_author(
   given = "Your First Name", 
   family = "Your Last Name", 
@@ -77,7 +81,7 @@ To ensure proper credit is given, create a new issue in your GitHub repository t
 
 For each additional contributor, run a similar command:
 
-```r
+```{r}
 use_author(given = "Coauthor First Name", family = "Coauthor Last Name", role = "aut")
 ```
 
@@ -85,7 +89,7 @@ use_author(given = "Coauthor First Name", family = "Coauthor Last Name", role = 
 
 After adding all contributors, open the `DESCRIPTION` file in your project and ensure the title and description reflect the purpose of your package accurately. Then, in your R console, run:
 
-```r
+```{r}
 update_description()
 ```
 
@@ -95,7 +99,7 @@ This will update fields such as version, authors, and dependencies. Review the `
 
 To complete the process, run the following commands again:
 
-```r
+```{r}
 devtools::document()
 devtools::check()
 devtools::install()

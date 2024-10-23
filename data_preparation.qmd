@@ -6,7 +6,7 @@ Everything starts with a dataset that you want to publish. You might even have s
 
 As a first step, you need to create a data directory where all datasets are stored in one place. To do this, open your R console within your project and type and execute the following command:
 
-```r
+```{r}
 library(washr)
 setup_rawdata()
 ```

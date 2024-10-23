@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Publishing with washr</title>
+<title>Data Publishing with washr - 5&nbsp; Troubleshooting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./creating_repo.html" rel="next">
+<link href="./data_publication.html" rel="prev">
 <link href="./owd-cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./troubleshooting.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Troubleshooting</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -145,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -175,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Troubleshooting</span></span></a>
   </div>
 </li>
@@ -189,16 +189,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#git-fails-when-pushing-commit-to-github" id="toc-git-fails-when-pushing-commit-to-github" class="nav-link active" data-scroll-target="#git-fails-when-pushing-commit-to-github"><span class="header-section-number">5.1</span> Git fails when pushing commit to github</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/troubleshooting.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Publishing with <code>washr</code></h1>
+<h1 class="title"><span id="sec-troubleshooting" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Troubleshooting</span></span></h1>
 </div>
 
 
@@ -215,13 +215,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome</h1><p><img src="owd-cover.png" title="Data Publishing with `washr`" class="quarto-cover-image img-fluid"></p>
-<p>Publishing data can be challenging, especially when adhering to standards of reproducibility. Although technically available, an Excel workbook with multiple tabs, tucked away in an online archive, is far from practical. In other words, it lacks the key principles of being findable, accessible, interoperable, and reproducible — commonly known as FAIR.</p>
-<p>This guide aims to provide a detailed walkthrough of how data can be published according to the FAIR principles. It builds on <a href="https://github.com/openwashdata-dev/washr"><code>washr</code></a>, an R package developed for swift data publication. The package emerged from the need to streamline certain steps when publishing the numerous datasets collected during <a href="https://openwashdata.org/pages/academy/">GHE’s openwashdata academy</a>.</p>
-<p>The guide follows a chronological structure, starting from an empty repository and resulting in the publication of data as a website. <a href="creating_repo.html" class="quarto-xref"><span>1&nbsp; Creating a repository</span></a> introduces version control, guiding readers through setting up both local and remote repositories to track all development steps. <a href="data_preparation.html" class="quarto-xref"><span>2&nbsp; Preparing your dataset</span></a> focuses on transforming the dataset into a tidy format. <a href="data_documentation.html" class="quarto-xref"><span>3&nbsp; Documenting Your Dataset</span></a> covers the documentation of the tidy dataset. Finally, <a href="data_publication.html" class="quarto-xref"><span>4&nbsp; Publishing Your Dataset</span></a> explains how users can create a website to showcase their dataset.</p>
-<p>This book is a work in progress. As we publish more data, we learn more and these insights flow back into this book. If something is unclear or incomplete, please open an issue <a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues">here</a> and we’ll try to address it.</p>
+<p>Although we try to make this guide as detailed as possible, unfortunately we cannot account for all eventualities. That’s why we’ve compiled a list of common issues (and solutions) here.</p>
+<section id="git-fails-when-pushing-commit-to-github" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="git-fails-when-pushing-commit-to-github"><span class="header-section-number">5.1</span> Git fails when pushing commit to github</h2>
+<p>If you want to push large files (e.g.&nbsp;raw datasets) to GitHub, Git may fail. A simple workaround is to increase the buffer size. You can do this with the following line in the terminal. Note that you need to be in the working directory of your project.</p>
+<pre><code>git config http.postBuffer 524288000</code></pre>
 
 
 </section>
@@ -638,11 +636,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./data_publication.html" class="pagination-link" aria-label="Publishing Your Dataset">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publishing Your Dataset</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./creating_repo.html" class="pagination-link" aria-label="Creating a repository">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Creating a repository</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -653,7 +651,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/troubleshooting.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a></p>
 </div>

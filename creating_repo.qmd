@@ -1,19 +1,23 @@
 # Creating a repository {#sec-repository}
 
-First, you have to create a GitHub repository within the GHE organization on GitHub. You can do this [here](https://github.com/Global-Health-Engineering).
+::: {.callout-note}
+The following steps assume that you are a member of GHE on GitHub. If you are not, reach out [here](https://github.com/Global-Health-Engineering) so we can create a repository for you.
+:::
+
+As your very first step, you have to create a new repository within the Global Health Engineering (hereafter referred to as GHE) organization on GitHub. You can do this [here](https://github.com/Global-Health-Engineering).
 
 Choose a name for your repository, make it public if you're data is not confidential/sensitive and click on "Create repository". For now, you don't need a README, .gitignore file or a license. You'll add these at a later stage.
 
-Once the repository is initialized, go back to RStudio and check if the `devtools` and `usethis` packages are installed. If not, please install/update them now as some of their functions are needed in the next steps.
+Once the repository is initialized, go back to RStudio and check if the [`devtools`](https://devtools.r-lib.org/) and [`usethis`](https://usethis.r-lib.org/) packages are installed. If not, please install/update them now as some of their functions are needed in the next steps.
 
-Let's create an [R Project](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects). Go to *File \> New Project \> New Directory \> R Package using devtools*.
+Next, you have to create an [R Project](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects). Go to *File \> New Project \> New Directory \> R Package using devtools*.
 
 ![](images/create_pkg_with_devtools.png){fig-align="center" style="border: 1px solid black;"}
 
-Copy and paste the name you chose for your GitHub repo as the directory name and select a location on your computer for the sub-directory.
+Copy and paste the name you chose for your GitHub repository as the directory name and select a location on your computer for your new project.
 
 ::: callout-note
-For the next steps we assume that you've already configured Git on your computer. If not, please make sure to do that before proceeding.
+For the next steps, we assume that you've already configured Git on your computer. If not, please make sure to do that before proceeding.
 :::
 
 With your project set up locally and a new repository online, it's time to connect the two. To do this, switch to the Terminal (the tab next to Console in RStudio) and run the following commands one after the other.
@@ -22,7 +26,7 @@ With your project set up locally and a new repository online, it's time to conne
 Replace `REPO` with the name of your newly created repository.
 :::
 
-```r      
+```      
 git remote add origin "https://github.com/Global-Health-Engineering/REPO.git" 
 
 git branch -M main
