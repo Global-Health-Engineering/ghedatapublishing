@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Data Publishing with washr",
     "section": "",
-    "text": "Welcome\nPublishing data can be challenging, especially when adhering to standards of reproducibility. Although technically available, an Excel workbook with multiple tabs, tucked away in an online archive, is far from practical. In other words, it lacks the key principles of being findable, accessible, interoperable, and reproducible — commonly known as FAIR.\nThis guide aims to provide a detailed walkthrough of how data can be published according to the FAIR principles. It builds on washr, an R package developed for swift data publication. The package emerged from the need to streamline certain steps when publishing the numerous datasets collected during GHE’s openwashdata academy.\nThe guide follows a chronological structure, starting from an empty repository and resulting in the publication of data as a website. 1  Creating a repository introduces version control, guiding readers through setting up both local and remote repositories to track all development steps. 2  Preparing your dataset focuses on transforming the dataset into a tidy format. 3  Documenting Your Dataset covers the documentation of the tidy dataset. Finally, 4  Publishing Your Dataset explains how users can create a website to showcase their dataset.\nThis book is a work in progress. As we publish more data, we learn more and these insights flow back into this book. If something is unclear or incomplete, please open an issue here and we’ll try to address it.",
+    "text": "Welcome\nPublishing data can be challenging, especially when adhering to standards of reproducibility. Although technically available, an Excel workbook with multiple tabs, tucked away in an online archive, is far from practical. In other words, it lacks the key principles of being findable, accessible, interoperable, and reproducible — commonly known as FAIR.\nThis guide aims to provide a detailed walkthrough of how data can be published according to the FAIR principles. It builds on washr, an R package developed for swift data publication. The package emerged from the need to streamline certain steps when publishing the datasets collected during GHE’s openwashdata academy.\nThe guide follows a chronological structure, starting from an empty repository and resulting in the publication of data as a website. 1  Creating a repository introduces version control, guiding readers through setting up both local and remote repositories to track all development steps. 2  Preparing your dataset focuses on transforming the dataset into a tidy format. 3  Documenting Your Dataset covers the documentation of the tidy dataset. 4  Publishing Your Dataset explains how users can create a website to showcase their dataset. Finally, 5  Creating a DOI and connecting it to GitHub helps you create a Digital Object Identifier (DOI) for your published data.\nThis book is a work in progress. As we publish more data, we learn more and these insights flow back into this book. If something is unclear or incomplete, please open an issue here and we’ll try to address it.",
     "crumbs": [
       "Welcome"
     ]
@@ -100,23 +100,73 @@
     ]
   },
   {
+    "objectID": "creating_doi.html",
+    "href": "creating_doi.html",
+    "title": "5  Creating a DOI and connecting it to GitHub",
+    "section": "",
+    "text": "5.1 Setting Up Your Repository on Zenodo\nBegin by accessing your Zenodo account through your GitHub credentials. Once logged in, you’ll need to establish the connection between Zenodo and your GitHub repository. To do so, navigate to the settings by clicking the dropdown menu next to your email address in the top right corner and select “GitHub” from the options.\nYou’ll see a list of your GitHub repositories. Locate the repository you want to publish and activate it by flipping the switch to “ON”. Click on the repository link to access its settings. This connection allows Zenodo to track your repository’s releases and create corresponding archives.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Creating a DOI and connecting it to GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "creating_doi.html#setting-up-your-repository-on-zenodo",
+    "href": "creating_doi.html#setting-up-your-repository-on-zenodo",
+    "title": "5  Creating a DOI and connecting it to GitHub",
+    "section": "",
+    "text": "5.1.1 Creating Your First Release\nWith the connection established, return to GitHub and create your initial release. Label it as version 0.0.1 and mark it as the “initial package release”. This triggers Zenodo to create an archive of your repository. Return to the Zenodo GitHub settings page to obtain your DOI badge, which you’ll need for documentation.\n\n\n5.1.2 Configuring Your Zenodo Entry\nOpen your entry on Zenodo and click the “Edit” button. You’ll need to make several important modifications to ensure your package is properly categorized and accessible:\n\nLocate the “Additional Notes” section and replace any existing text with a link to your GitHub pages website.\nAdjust the upload type from “Software” to “Dataset” to properly categorize your submission. Under “Related identifiers”, remove the current release link entry and add your GitHub pages URL, specifying that it “is compiled/created by this upload” and categorizing it as a Dataset.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Creating a DOI and connecting it to GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "creating_doi.html#documentation-updates-in-rstudio",
+    "href": "creating_doi.html#documentation-updates-in-rstudio",
+    "title": "5  Creating a DOI and connecting it to GitHub",
+    "section": "5.2 Documentation Updates in RStudio",
+    "text": "5.2 Documentation Updates in RStudio\nAfter configuring Zenodo, switch to RStudio to update your package documentation. Begin by adding the DOI badge to your README file. This badge serves as both a citation tool and a way to track your package’s usage.\nUpdate your DESCRIPTION file with the new version number to maintain consistency across all package documentation. Then, create or update your citation files (CITATION.cff and inst/CITATION) to include the DOI information. You can use either the template available in the community gist or utilize the openwashdata R Package for this purpose.\nFinally, re-render your package documentation website by running pkgdown::build_site() in your R console. This ensures all your recent changes are reflected on the website as well.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Creating a DOI and connecting it to GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "creating_doi.html#eth-research-collection-submission",
+    "href": "creating_doi.html#eth-research-collection-submission",
+    "title": "5  Creating a DOI and connecting it to GitHub",
+    "section": "5.3 ETH Research Collection Submission",
+    "text": "5.3 ETH Research Collection Submission\n\n\n\n\n\n\nNote\n\n\n\nThis section applies only to GHE workflow submissions\n\n\nFor submissions to the ETH Research Collection, navigate to the research data section and select “dataset” as your submission type. Under organizational unit, select “tilley”, and set your license to “Creative Commons Attribution 4.0 International”. These settings ensure your submission aligns with institutional requirements and makes your data openly accessible while protecting your rights as the creator.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Creating a DOI and connecting it to GitHub</span>"
+    ]
+  },
+  {
     "objectID": "troubleshooting.html",
     "href": "troubleshooting.html",
-    "title": "5  Troubleshooting",
+    "title": "6  Troubleshooting",
     "section": "",
-    "text": "5.1 Git fails when pushing commit to github\nIf you want to push large files (e.g. raw datasets) to GitHub, Git may fail. A simple workaround is to increase the buffer size. You can do this with the following line in the terminal. Note that you need to be in the working directory of your project.",
+    "text": "6.1 Git fails when pushing commit to github\nIf you want to push large files (e.g. raw datasets) to GitHub, Git may fail. A simple workaround is to increase the buffer size. You can do this with the following line in the terminal. Note that you need to be in the working directory of your project.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Troubleshooting</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Troubleshooting</span>"
     ]
   },
   {
     "objectID": "troubleshooting.html#git-fails-when-pushing-commit-to-github",
     "href": "troubleshooting.html#git-fails-when-pushing-commit-to-github",
-    "title": "5  Troubleshooting",
+    "title": "6  Troubleshooting",
     "section": "",
     "text": "git config http.postBuffer 524288000",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Troubleshooting</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Troubleshooting</span>"
+    ]
+  },
+  {
+    "objectID": "troubleshooting.html#r-cmd-check",
+    "href": "troubleshooting.html#r-cmd-check",
+    "title": "6  Troubleshooting",
+    "section": "6.2 R CMD CHECK",
+    "text": "6.2 R CMD CHECK\nDuring the publication process, you might encounter several common issues when running R CMD CHECK. Here’s how to address them:\nIf you receive a “unable to verify current time” error, this typically relates to your system’s time synchronization. You can find a detailed solution in the Stack Overflow discussion addressing this specific issue.\nAnother common issue is the “Non-standard files/directories found at top level” warning. This occurs when your package contains files that R doesn’t expect in the root directory. While this warning doesn’t prevent your package from working, you can resolve it by following the guidance provided in this Stack Overflow thread.\nRemember to verify all URLs and steps before beginning the process, as platforms occasionally update their interfaces and requirements. If you encounter any issues not covered in this manual, consult the respective platform’s documentation or reach out to their support teams. By following these steps carefully, your data package is properly documented, citeable, and accessible to the research community.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Troubleshooting</span>"
     ]
   }
 ]

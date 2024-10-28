@@ -1,0 +1,36 @@
+# Creating a DOI and connecting it to GitHub {#sec-doi}
+
+This chapter guides you through the process of creating a Digital Object Identifier (DOI) and connecting it to your GitHub repository. 
+
+## Setting Up Your Repository on Zenodo
+
+Begin by accessing your [Zenodo](https://zenodo.org/) account through your GitHub credentials. Once logged in, you'll need to establish the connection between Zenodo and your GitHub repository. To do so, navigate to the settings by clicking the dropdown menu next to your email address in the top right corner and select "GitHub" from the options.
+
+You'll see a list of your GitHub repositories. Locate the repository you want to publish and activate it by flipping the switch to "ON". Click on the repository link to access its settings. This connection allows Zenodo to track your repository's releases and create corresponding archives.
+
+### Creating Your First Release
+
+With the connection established, return to GitHub and create your initial release. Label it as version 0.0.1 and mark it as the "initial package release". This triggers Zenodo to create an archive of your repository. Return to the Zenodo GitHub settings page to obtain your DOI badge, which you'll need for documentation.
+
+### Configuring Your Zenodo Entry
+
+Open your entry on Zenodo and click the "Edit" button. You'll need to make several important modifications to ensure your package is properly categorized and accessible:
+
+1. Locate the "Additional Notes" section and replace any existing text with a link to your GitHub pages website. 
+2. Adjust the upload type from "Software" to "Dataset" to properly categorize your submission. Under "Related identifiers", remove the current release link entry and add your GitHub pages URL, specifying that it "is compiled/created by this upload" and categorizing it as a Dataset.
+
+## Documentation Updates in RStudio
+
+After configuring Zenodo, switch to RStudio to update your package documentation. Begin by adding the DOI badge to your README file. This badge serves as both a citation tool and a way to track your package's usage.
+
+Update your DESCRIPTION file with the new version number to maintain consistency across all package documentation. Then, create or update your citation files (CITATION.cff and inst/CITATION) to include the DOI information. You can use either the template available in the [community gist](https://gist.github.com/larnsce/dccdb26762837618c6dda82a5614b584) or utilize the openwashdata R Package for this purpose.
+
+Finally, re-render your package documentation website by running `pkgdown::build_site()` in your R console. This ensures all your recent changes are reflected on the website as well.
+
+## ETH Research Collection Submission
+
+::: callout-note
+This section applies only to GHE workflow submissions
+:::
+
+For submissions to the ETH Research Collection, navigate to the research data section and select "dataset" as your submission type. Under organizational unit, select "tilley", and set your license to "Creative Commons Attribution 4.0 International". These settings ensure your submission aligns with institutional requirements and makes your data openly accessible while protecting your rights as the creator.

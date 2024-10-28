@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://global-health-engineering.github.io/ghedatapublishing/index.html</loc>
-    <lastmod>2024-10-08T16:46:58.379Z</lastmod>
+    <lastmod>2024-10-28T15:07:54.756Z</lastmod>
   </url>
   <url>
     <loc>https://global-health-engineering.github.io/ghedatapublishing/creating_repo.html</loc>
@@ -21,7 +21,11 @@
     <lastmod>2024-10-23T14:01:15.344Z</lastmod>
   </url>
   <url>
+    <loc>https://global-health-engineering.github.io/ghedatapublishing/creating_doi.html</loc>
+    <lastmod>2024-10-28T15:01:13.831Z</lastmod>
+  </url>
+  <url>
     <loc>https://global-health-engineering.github.io/ghedatapublishing/troubleshooting.html</loc>
-    <lastmod>2024-10-23T15:09:28.938Z</lastmod>
+    <lastmod>2024-10-28T15:14:59.970Z</lastmod>
   </url>
 </urlset>

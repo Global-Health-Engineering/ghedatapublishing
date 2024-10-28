@@ -9,3 +9,13 @@ If you want to push large files (e.g. raw datasets) to GitHub, Git may fail. A s
 ```
 git config http.postBuffer 524288000
 ```
+
+## R CMD CHECK
+
+During the publication process, you might encounter several common issues when running R CMD CHECK. Here's how to address them:
+
+If you receive a "unable to verify current time" error, this typically relates to your system's time synchronization. You can find a detailed solution in the [Stack Overflow discussion](https://stackoverflow.com/a/63837547/6816220) addressing this specific issue.
+
+Another common issue is the "Non-standard files/directories found at top level" warning. This occurs when your package contains files that R doesn't expect in the root directory. While this warning doesn't prevent your package from working, you can resolve it by following the guidance provided in this [Stack Overflow thread](https://stackoverflow.com/questions/48955103/non-standard-file-directory-found-at-top-level-readme-rmd-persists-even-after).
+
+Remember to verify all URLs and steps before beginning the process, as platforms occasionally update their interfaces and requirements. If you encounter any issues not covered in this manual, consult the respective platform's documentation or reach out to their support teams. By following these steps carefully, your data package is properly documented, citeable, and accessible to the research community.

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Publishing with washr - 5&nbsp; Troubleshooting</title>
+<title>Data Publishing with washr - 6&nbsp; Troubleshooting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./data_publication.html" rel="prev">
+<link href="./creating_doi.html" rel="prev">
 <link href="./owd-cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./troubleshooting.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Troubleshooting</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./troubleshooting.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Troubleshooting</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -175,8 +175,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./creating_doi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating a DOI and connecting it to GitHub</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Troubleshooting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Troubleshooting</span></span></a>
   </div>
 </li>
     </ul>
@@ -189,7 +195,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#git-fails-when-pushing-commit-to-github" id="toc-git-fails-when-pushing-commit-to-github" class="nav-link active" data-scroll-target="#git-fails-when-pushing-commit-to-github"><span class="header-section-number">5.1</span> Git fails when pushing commit to github</a></li>
+  <li><a href="#git-fails-when-pushing-commit-to-github" id="toc-git-fails-when-pushing-commit-to-github" class="nav-link active" data-scroll-target="#git-fails-when-pushing-commit-to-github"><span class="header-section-number">6.1</span> Git fails when pushing commit to github</a></li>
+  <li><a href="#r-cmd-check" id="toc-r-cmd-check" class="nav-link" data-scroll-target="#r-cmd-check"><span class="header-section-number">6.2</span> R CMD CHECK</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/troubleshooting.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -198,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-troubleshooting" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Troubleshooting</span></span></h1>
+<h1 class="title"><span id="sec-troubleshooting" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Troubleshooting</span></span></h1>
 </div>
 
 
@@ -216,10 +223,17 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Although we try to make this guide as detailed as possible, unfortunately we cannot account for all eventualities. That’s why we’ve compiled a list of common issues (and solutions) here.</p>
-<section id="git-fails-when-pushing-commit-to-github" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="git-fails-when-pushing-commit-to-github"><span class="header-section-number">5.1</span> Git fails when pushing commit to github</h2>
+<section id="git-fails-when-pushing-commit-to-github" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="git-fails-when-pushing-commit-to-github"><span class="header-section-number">6.1</span> Git fails when pushing commit to github</h2>
 <p>If you want to push large files (e.g.&nbsp;raw datasets) to GitHub, Git may fail. A simple workaround is to increase the buffer size. You can do this with the following line in the terminal. Note that you need to be in the working directory of your project.</p>
 <pre><code>git config http.postBuffer 524288000</code></pre>
+</section>
+<section id="r-cmd-check" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="r-cmd-check"><span class="header-section-number">6.2</span> R CMD CHECK</h2>
+<p>During the publication process, you might encounter several common issues when running R CMD CHECK. Here’s how to address them:</p>
+<p>If you receive a “unable to verify current time” error, this typically relates to your system’s time synchronization. You can find a detailed solution in the <a href="https://stackoverflow.com/a/63837547/6816220">Stack Overflow discussion</a> addressing this specific issue.</p>
+<p>Another common issue is the “Non-standard files/directories found at top level” warning. This occurs when your package contains files that R doesn’t expect in the root directory. While this warning doesn’t prevent your package from working, you can resolve it by following the guidance provided in this <a href="https://stackoverflow.com/questions/48955103/non-standard-file-directory-found-at-top-level-readme-rmd-persists-even-after">Stack Overflow thread</a>.</p>
+<p>Remember to verify all URLs and steps before beginning the process, as platforms occasionally update their interfaces and requirements. If you encounter any issues not covered in this manual, consult the respective platform’s documentation or reach out to their support teams. By following these steps carefully, your data package is properly documented, citeable, and accessible to the research community.</p>
 
 
 </section>
@@ -636,8 +650,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./data_publication.html" class="pagination-link" aria-label="Publishing Your Dataset">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publishing Your Dataset</span></span>
+      <a href="./creating_doi.html" class="pagination-link" aria-label="Creating a DOI and connecting it to GitHub">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating a DOI and connecting it to GitHub</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -647,7 +661,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Data Publishing with <code>washr</code> was written by the <a href="https://openwashdata.org/about#team">Open Science Team</a> at GHE</p>
+<p>Data Publishing with <code>washr</code> was written by the <a href="https://openwashdata.org/about#team"> Open Science Team </a> at <a href="https://ghe.ethz.ch/"> GHE </a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Publishing with washr - 1&nbsp; Creating a repository</title>
+<title>Data Publishing with washr - 5&nbsp; Creating a DOI and connecting it to GitHub</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./data_preparation.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./troubleshooting.html" rel="next">
+<link href="./data_publication.html" rel="prev">
 <link href="./owd-cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./creating_repo.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Creating a repository</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./creating_doi.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating a DOI and connecting it to GitHub</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./creating_repo.html" class="sidebar-item-text sidebar-link active">
+  <a href="./creating_repo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Creating a repository</span></span></a>
   </div>
 </li>
@@ -176,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./creating_doi.html" class="sidebar-item-text sidebar-link">
+  <a href="./creating_doi.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating a DOI and connecting it to GitHub</span></span></a>
   </div>
 </li>
@@ -192,14 +192,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#setting-up-your-repository-on-zenodo" id="toc-setting-up-your-repository-on-zenodo" class="nav-link active" data-scroll-target="#setting-up-your-repository-on-zenodo"><span class="header-section-number">5.1</span> Setting Up Your Repository on Zenodo</a>
+  <ul class="collapse">
+  <li><a href="#creating-your-first-release" id="toc-creating-your-first-release" class="nav-link" data-scroll-target="#creating-your-first-release"><span class="header-section-number">5.1.1</span> Creating Your First Release</a></li>
+  <li><a href="#configuring-your-zenodo-entry" id="toc-configuring-your-zenodo-entry" class="nav-link" data-scroll-target="#configuring-your-zenodo-entry"><span class="header-section-number">5.1.2</span> Configuring Your Zenodo Entry</a></li>
+  </ul></li>
+  <li><a href="#documentation-updates-in-rstudio" id="toc-documentation-updates-in-rstudio" class="nav-link" data-scroll-target="#documentation-updates-in-rstudio"><span class="header-section-number">5.2</span> Documentation Updates in RStudio</a></li>
+  <li><a href="#eth-research-collection-submission" id="toc-eth-research-collection-submission" class="nav-link" data-scroll-target="#eth-research-collection-submission"><span class="header-section-number">5.3</span> ETH Research Collection Submission</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/creating_doi.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-repository" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Creating a repository</span></span></h1>
+<h1 class="title"><span id="sec-doi" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Creating a DOI and connecting it to GitHub</span></span></h1>
 </div>
 
 
@@ -216,6 +228,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>This chapter guides you through the process of creating a Digital Object Identifier (DOI) and connecting it to your GitHub repository.</p>
+<section id="setting-up-your-repository-on-zenodo" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="setting-up-your-repository-on-zenodo"><span class="header-section-number">5.1</span> Setting Up Your Repository on Zenodo</h2>
+<p>Begin by accessing your <a href="https://zenodo.org/">Zenodo</a> account through your GitHub credentials. Once logged in, you’ll need to establish the connection between Zenodo and your GitHub repository. To do so, navigate to the settings by clicking the dropdown menu next to your email address in the top right corner and select “GitHub” from the options.</p>
+<p>You’ll see a list of your GitHub repositories. Locate the repository you want to publish and activate it by flipping the switch to “ON”. Click on the repository link to access its settings. This connection allows Zenodo to track your repository’s releases and create corresponding archives.</p>
+<section id="creating-your-first-release" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="creating-your-first-release"><span class="header-section-number">5.1.1</span> Creating Your First Release</h3>
+<p>With the connection established, return to GitHub and create your initial release. Label it as version 0.0.1 and mark it as the “initial package release”. This triggers Zenodo to create an archive of your repository. Return to the Zenodo GitHub settings page to obtain your DOI badge, which you’ll need for documentation.</p>
+</section>
+<section id="configuring-your-zenodo-entry" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="configuring-your-zenodo-entry"><span class="header-section-number">5.1.2</span> Configuring Your Zenodo Entry</h3>
+<p>Open your entry on Zenodo and click the “Edit” button. You’ll need to make several important modifications to ensure your package is properly categorized and accessible:</p>
+<ol type="1">
+<li>Locate the “Additional Notes” section and replace any existing text with a link to your GitHub pages website.</li>
+<li>Adjust the upload type from “Software” to “Dataset” to properly categorize your submission. Under “Related identifiers”, remove the current release link entry and add your GitHub pages URL, specifying that it “is compiled/created by this upload” and categorizing it as a Dataset.</li>
+</ol>
+</section>
+</section>
+<section id="documentation-updates-in-rstudio" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="documentation-updates-in-rstudio"><span class="header-section-number">5.2</span> Documentation Updates in RStudio</h2>
+<p>After configuring Zenodo, switch to RStudio to update your package documentation. Begin by adding the DOI badge to your README file. This badge serves as both a citation tool and a way to track your package’s usage.</p>
+<p>Update your DESCRIPTION file with the new version number to maintain consistency across all package documentation. Then, create or update your citation files (CITATION.cff and inst/CITATION) to include the DOI information. You can use either the template available in the <a href="https://gist.github.com/larnsce/dccdb26762837618c6dda82a5614b584">community gist</a> or utilize the openwashdata R Package for this purpose.</p>
+<p>Finally, re-render your package documentation website by running <code>pkgdown::build_site()</code> in your R console. This ensures all your recent changes are reflected on the website as well.</p>
+</section>
+<section id="eth-research-collection-submission" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="eth-research-collection-submission"><span class="header-section-number">5.3</span> ETH Research Collection Submission</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -226,59 +264,13 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The following steps assume that you are a member of GHE on GitHub. If you are not, reach out <a href="https://github.com/Global-Health-Engineering">here</a> so we can create a repository for you.</p>
+<p>This section applies only to GHE workflow submissions</p>
 </div>
 </div>
-<p>As your very first step, you have to create a new repository within the Global Health Engineering (hereafter referred to as GHE) organization on GitHub. You can do this <a href="https://github.com/Global-Health-Engineering">here</a>.</p>
-<p>Choose a name for your repository, make it public if you’re data is not confidential/sensitive and click on “Create repository”. For now, you don’t need a README, .gitignore file or a license. You’ll add these at a later stage.</p>
-<p>Once the repository is initialized, go back to RStudio and check if the <a href="https://devtools.r-lib.org/"><code>devtools</code></a> and <a href="https://usethis.r-lib.org/"><code>usethis</code></a> packages are installed. If not, please install/update them now as some of their functions are needed in the next steps.</p>
-<p>Next, you have to create an <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">R Project</a>. Go to <em>File &gt; New Project &gt; New Directory &gt; R Package using devtools</em>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/create_pkg_with_devtools.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="border: 1px solid black;"></p>
-</figure>
-</div>
-<p>Copy and paste the name you chose for your GitHub repository as the directory name and select a location on your computer for your new project.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For the next steps, we assume that you’ve already configured Git on your computer. If not, please make sure to do that before proceeding.</p>
-</div>
-</div>
-<p>With your project set up locally and a new repository online, it’s time to connect the two. To do this, switch to the Terminal (the tab next to Console in RStudio) and run the following commands one after the other.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Replace <code>REPO</code> with the name of your newly created repository.</p>
-</div>
-</div>
-<pre><code>git remote add origin "https://github.com/Global-Health-Engineering/REPO.git" 
-
-git branch -M main
-
-git push -u origin main</code></pre>
-<p>If everything went well, you’re local repository (on your computer) should now be connected to the remote repository (on GitHub) which allows you to push and pull changes and to invite collaborators.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/repos.png" class="quarto-figure quarto-figure-center figure-img" style="border: 1px solid black;;width:40.0%;height:40.0%"></p>
-</figure>
-</div>
+<p>For submissions to the ETH Research Collection, navigate to the research data section and select “dataset” as your submission type. Under organizational unit, select “tilley”, and set your license to “Creative Commons Attribution 4.0 International”. These settings ensure your submission aligns with institutional requirements and makes your data openly accessible while protecting your rights as the creator.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -692,13 +684,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Welcome">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./data_publication.html" class="pagination-link" aria-label="Publishing Your Dataset">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Publishing Your Dataset</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./data_preparation.html" class="pagination-link" aria-label="Preparing your dataset">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preparing your dataset</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./troubleshooting.html" class="pagination-link" aria-label="Troubleshooting">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Troubleshooting</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -710,7 +702,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/creating_repo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/creating_doi.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a></p>
 </div>
