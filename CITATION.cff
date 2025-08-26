@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: "ghedatapublishing"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - given-names: Colin
+    family-names: Walder
+    email: cwalder@ethz.ch
+    affiliation: 'Global Health Engineering, ETH Zürich'
+    orcid: 'https://orcid.org/0009-0006-0969-1954'
+  - given-names: Lars
+    family-names: Schöbitz
+    email: lschoebitz@ethz.ch
+    affiliation: 'Global Health Engineering, ETH Zürich'
+    orcid: 'https://orcid.org/0000-0003-2196-5015'
+  - given-names: Yash
+    family-names: Dubey
+    email: yash.dubey@gess.ethz.ch
+    affiliation: 'Global Health Engineering, ETH Zürich'
+    orcid: 'https://orcid.org/0009-0001-2849-970X'
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2025-08-26
+url: "https://github.com/Global-Health-Engineering/ghedatapublishing"
