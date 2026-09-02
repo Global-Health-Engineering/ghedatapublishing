@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://global-health-engineering.github.io/ghedatapublishing/index.html</loc>
-    <lastmod>2025-01-06T13:40:46.283Z</lastmod>
+    <lastmod>2026-09-02T04:17:17.352Z</lastmod>
   </url>
   <url>
     <loc>https://global-health-engineering.github.io/ghedatapublishing/creating_repo.html</loc>
-    <lastmod>2024-10-23T15:07:18.883Z</lastmod>
+    <lastmod>2026-09-02T04:13:55.500Z</lastmod>
   </url>
   <url>
     <loc>https://global-health-engineering.github.io/ghedatapublishing/data_preparation.html</loc>
-    <lastmod>2024-10-23T14:02:57.729Z</lastmod>
+    <lastmod>2026-09-02T04:13:55.500Z</lastmod>
   </url>
   <url>
     <loc>https://global-health-engineering.github.io/ghedatapublishing/data_documentation.html</loc>
-    <lastmod>2025-01-06T14:31:12.876Z</lastmod>
+    <lastmod>2026-09-02T04:19:24.063Z</lastmod>
   </url>
   <url>
     <loc>https://global-health-engineering.github.io/ghedatapublishing/data_publication.html</loc>
-    <lastmod>2024-10-23T14:01:15.344Z</lastmod>
+    <lastmod>2026-09-02T04:19:24.063Z</lastmod>
   </url>
   <url>
     <loc>https://global-health-engineering.github.io/ghedatapublishing/creating_doi.html</loc>
-    <lastmod>2024-10-28T15:01:13.831Z</lastmod>
+    <lastmod>2026-09-02T04:18:15.830Z</lastmod>
   </url>
   <url>
     <loc>https://global-health-engineering.github.io/ghedatapublishing/troubleshooting.html</loc>
-    <lastmod>2025-01-06T13:40:46.284Z</lastmod>
+    <lastmod>2026-09-02T04:13:55.508Z</lastmod>
+  </url>
+  <url>
+    <loc>https://global-health-engineering.github.io/ghedatapublishing/Data-Publishing-with-`washr`.pdf</loc>
+    <lastmod>2026-09-02T04:19:35.744Z</lastmod>
   </url>
 </urlset>

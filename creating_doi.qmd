@@ -21,11 +21,13 @@ Open your entry on Zenodo and click the "Edit" button. You'll need to make sever
 
 ## Documentation Updates in RStudio
 
-After configuring Zenodo, switch to RStudio to update your package documentation. Begin by adding the DOI badge to your README file. This badge serves as both a citation tool and a way to track your package's usage.
+After configuring Zenodo, switch to RStudio. Update the version number in your DESCRIPTION file so it matches the release. Then write the DOI into the citation files (`CITATION.cff` and `inst/CITATION`) and the README with one call, using the DOI shown on your Zenodo entry:
 
-Update your DESCRIPTION file with the new version number to maintain consistency across all package documentation. Then, create or update your citation files (CITATION.cff and inst/CITATION) to include the DOI information. You can use either the template available in the [community gist](https://gist.github.com/larnsce/dccdb26762837618c6dda82a5614b584) or utilize the openwashdata R Package for this purpose.
+```{r}
+update_citation(doi = "10.5281/zenodo.11185699")
+```
 
-Finally, re-render your package documentation website by running `pkgdown::build_site()` in your R console. This ensures all your recent changes are reflected on the website as well.
+The function regenerates both citation files from DESCRIPTION, adds the DOI badge to `README.Rmd`, rebuilds `README.md`, and rebuilds the website in `docs/` when it exists. Commit and push the changed files.
 
 ## ETH Research Collection Submission
 
