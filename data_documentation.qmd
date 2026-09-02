@@ -107,55 +107,31 @@ devtools::install()
 
 ## FAIR Documentation
 
-The following steps are used to enrich and make metadata from your package more accessible to other users as well as search engines that index your website. 
+One function derives the machine readable metadata of your package from the files you have already written: `DESCRIPTION`, `data-raw/dictionary.csv`, `CITATION.cff` and the exports in `inst/extdata`. Nothing is edited by hand; when a value is wrong, change its source and run the function again.
 
-### Adding Metadata files 
+### Keywords and coverage
 
-Add metadata files that conform to [`dataspice`](https://docs.ropensci.org/dataspice/index.html), a lightweight metadata format for researchers. In your R console run: 
+Three facts have no other home, so they live in `DESCRIPTION`. Open the file and add three lines, with your own values:
 
-```{r}
-add_metadata()
+```
+X-schema.org-keywords: sanitation, faecal sludge, Kampala
+X-schema.org-spatialCoverage: Kampala, Uganda
+X-schema.org-temporalCoverage: 2022-03-01/2022-09-30
 ```
 
-This function will create supporting metadata files in the data/metadata folder of your package. The following metadata files are added: 
+The keywords are a comma separated list. The spatial coverage is a place name. The temporal coverage is the first and the last date of the data, separated by a slash.
 
-- Bibliography (Temporal and Geographic Coverage, Citation, Keywords, Funding, and Licensing)
-- Access (Access details for processed data)
-- Creators (Author(s))
-- Attributes (Description of variables in the dataset)
+### Generating the metadata
 
-
-### Updating Metadata Files
-
-Metadata files are enriched automatically from existing metadata generated using all previous documentation steps from this guide. To do this, in your R console run: 
+In your R console run:
 
 ```{r}
 update_metadata()
 ```
 
-**Note: This function may report errors if all previous steps in the guide are not followed correctly!**
+The function writes a schema.org description of your dataset as JSON-LD into `pkgdown/templates/in-header.html`. The website build in the next chapter embeds it in the head of every page, where dataset search engines such as Google Dataset Search read it. The function ends with a list of the fields it could not fill and where to fill them.
 
-After running the function, please open all metadata files to update blank fields as required. 
-
-### Adding creators
-
-In your R console, run: 
-
-```{r}
-add_creator(name="Jane Doe", email="jane.doe@mail.org", affiliation="Openwashdata")
-```
-
-This allows addition of contributors. Run the function as many times as required to add contributors.
-
-### Creating JSON-LD documentation
-
-JSON-LD versions of your package documentation allow search engines to index and find your website. This is an optional step if you plan to publish a website (next step in this guide) for your data package. To create a `metadata.json` file, simply run: 
-
-```{r}
-generate_jsonld()
-```
-
-This will generate the JSON-LD file in the appropriate format and store it in the `inst/extdata` folder. 
+Run it again after every change to `DESCRIPTION`, the dictionary or the exports, and once more after the DOI exists (see @sec-doi). A second run with nothing changed writes nothing.
 
 ### Final Documentation Check
 
