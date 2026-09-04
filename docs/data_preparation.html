@@ -273,10 +273,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="images/datapreparation.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="border: 1px solid black;"></p>
 </figure>
 </div>
-<p>As a first step, you need to create a data directory where all datasets are stored in one place. To do this, open your R console within your project and type and execute the following command:</p>
+<p>Before the data, add the check that every push to GitHub will run. Open your R console within your project and execute:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(washr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_rawdata</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_ci</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>This writes a GitHub Actions workflow that runs <code>R CMD check</code> on every push and pull request, on macOS, Windows and Linux. The openwashdata review standard requires it, and your package now meets that part of the standard from its first commit.</p>
+<p>As a first step for the data, you need to create a data directory where all datasets are stored in one place. In your R console, execute:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_rawdata</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This command will create a new directory called <code>data-raw</code> in your project folder where you will store all your raw datasets. Copy or move all your files into the newly created <code>data-raw</code> directory.</p>
 <p>Next, you’ll want to have this directory under version control so that you can track your changes.</p>

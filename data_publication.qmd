@@ -17,11 +17,13 @@ setup_readme()
 ```
 
 
-If you want to include an example article for your package, you can use this command instead:
+If you want the README to include an Example section with a scaffold for a first plot of your data, use this command instead:
 
 ```{r}
 setup_readme(has_example = TRUE)
 ```
+
+The template documents the first data object in `data/`. When your package holds several, copy the data section once per further object.
 
 ### Editing the README
 
@@ -35,7 +37,7 @@ Locate the `README.Rmd` file in your project directory and open it. Edit each se
 
 ### Creating a Data Visualization
 
-In the "Example" section of your README, it’s helpful to include at least one plot that showcases your data. For instance, using `ggplot2`, you could create a plot like this (adapt it to fit your specific data):
+In the "Example" section of your README, it’s helpful to include at least one plot that showcases your data. The section written by `setup_readme(has_example = TRUE)` holds a commented scaffold for it. For instance, using `ggplot2`, you could create a plot like this (adapt it to fit your specific data):
 
 ```{r}
 library(ggplot2)
@@ -73,7 +75,17 @@ Run the following command in your R console:
 setup_website()
 ```
 
-When prompted, choose "No" to prevent overwriting the existing `_pkgdown.yml` file. This preserves the styling for your website.
+The first run writes `_pkgdown.yml` from the openwashdata template and builds the site into `docs/`. Every later run keeps your `_pkgdown.yml` as it is and rebuilds the site, so there is nothing to answer.
+
+### Applying the openwashdata brand
+
+To give the site the openwashdata fonts and colors, run:
+
+```{r}
+use_brand()
+```
+
+This copies the brand file and the logos from the central brand repository into your package and points `_pkgdown.yml` at them. Run it again whenever the brand changes.
 
 ### Document, Check, and Install the Package
 
@@ -89,7 +101,7 @@ These commands generate the latest documentation, check the package for issues, 
 
 ### Preparing for GitHub Pages
 
-To host the package website on GitHub Pages, you first need to make sure Git tracks the necessary files. Open the `.gitignore` file in your project directory, find the line that says `docs`, and remove it. Save the file to allow the `docs/` folder to be tracked by Git.
+To host the package website on GitHub Pages, Git has to track the built site. `setup_website()` removes the `docs` line from `.gitignore` for you, so the `docs/` folder is tracked. Check that the line is gone before you commit.
 
 ### Updating GitHub with Website Files
 

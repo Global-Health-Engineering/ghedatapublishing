@@ -246,10 +246,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#setting-up-the-package-website" id="toc-setting-up-the-package-website" class="nav-link" data-scroll-target="#setting-up-the-package-website"><span class="header-section-number">4.2</span> Setting Up the Package Website</a>
   <ul class="collapse">
   <li><a href="#initializing-the-website" id="toc-initializing-the-website" class="nav-link" data-scroll-target="#initializing-the-website"><span class="header-section-number">4.2.1</span> Initializing the Website</a></li>
-  <li><a href="#document-check-and-install-the-package" id="toc-document-check-and-install-the-package" class="nav-link" data-scroll-target="#document-check-and-install-the-package"><span class="header-section-number">4.2.2</span> Document, Check, and Install the Package</a></li>
-  <li><a href="#preparing-for-github-pages" id="toc-preparing-for-github-pages" class="nav-link" data-scroll-target="#preparing-for-github-pages"><span class="header-section-number">4.2.3</span> Preparing for GitHub Pages</a></li>
-  <li><a href="#updating-github-with-website-files" id="toc-updating-github-with-website-files" class="nav-link" data-scroll-target="#updating-github-with-website-files"><span class="header-section-number">4.2.4</span> Updating GitHub with Website Files</a></li>
-  <li><a href="#setting-up-github-pages" id="toc-setting-up-github-pages" class="nav-link" data-scroll-target="#setting-up-github-pages"><span class="header-section-number">4.2.5</span> Setting Up GitHub Pages</a></li>
+  <li><a href="#applying-the-openwashdata-brand" id="toc-applying-the-openwashdata-brand" class="nav-link" data-scroll-target="#applying-the-openwashdata-brand"><span class="header-section-number">4.2.2</span> Applying the openwashdata brand</a></li>
+  <li><a href="#document-check-and-install-the-package" id="toc-document-check-and-install-the-package" class="nav-link" data-scroll-target="#document-check-and-install-the-package"><span class="header-section-number">4.2.3</span> Document, Check, and Install the Package</a></li>
+  <li><a href="#preparing-for-github-pages" id="toc-preparing-for-github-pages" class="nav-link" data-scroll-target="#preparing-for-github-pages"><span class="header-section-number">4.2.4</span> Preparing for GitHub Pages</a></li>
+  <li><a href="#updating-github-with-website-files" id="toc-updating-github-with-website-files" class="nav-link" data-scroll-target="#updating-github-with-website-files"><span class="header-section-number">4.2.5</span> Updating GitHub with Website Files</a></li>
+  <li><a href="#setting-up-github-pages" id="toc-setting-up-github-pages" class="nav-link" data-scroll-target="#setting-up-github-pages"><span class="header-section-number">4.2.6</span> Setting Up GitHub Pages</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/data_publication.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -285,10 +286,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_readme</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>If you want to include an example article for your package, you can use this command instead:</p>
+<p>If you want the README to include an Example section with a scaffold for a first plot of your data, use this command instead:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_readme</span>(<span class="at">has_example =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>The template documents the first data object in <code>data/</code>. When your package holds several, copy the data section once per further object.</p>
 </section>
 <section id="editing-the-readme" class="level3" data-number="4.1.2">
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="editing-the-readme"><span class="header-section-number">4.1.2</span> Editing the README</h3>
@@ -303,7 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="creating-a-data-visualization" class="level3" data-number="4.1.3">
 <h3 data-number="4.1.3" class="anchored" data-anchor-id="creating-a-data-visualization"><span class="header-section-number">4.1.3</span> Creating a Data Visualization</h3>
-<p>In the “Example” section of your README, it’s helpful to include at least one plot that showcases your data. For instance, using <code>ggplot2</code>, you could create a plot like this (adapt it to fit your specific data):</p>
+<p>In the “Example” section of your README, it’s helpful to include at least one plot that showcases your data. The section written by <code>setup_readme(has_example = TRUE)</code> holds a commented scaffold for it. For instance, using <code>ggplot2</code>, you could create a plot like this (adapt it to fit your specific data):</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(yourpackagename)</span>
@@ -336,28 +338,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setup_website</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>When prompted, choose “No” to prevent overwriting the existing <code>_pkgdown.yml</code> file. This preserves the styling for your website.</p>
+<p>The first run writes <code>_pkgdown.yml</code> from the openwashdata template and builds the site into <code>docs/</code>. Every later run keeps your <code>_pkgdown.yml</code> as it is and rebuilds the site, so there is nothing to answer.</p>
 </section>
-<section id="document-check-and-install-the-package" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="document-check-and-install-the-package"><span class="header-section-number">4.2.2</span> Document, Check, and Install the Package</h3>
+<section id="applying-the-openwashdata-brand" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="applying-the-openwashdata-brand"><span class="header-section-number">4.2.2</span> Applying the openwashdata brand</h3>
+<p>To give the site the openwashdata fonts and colors, run:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">use_brand</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>This copies the brand file and the logos from the central brand repository into your package and points <code>_pkgdown.yml</code> at them. Run it again whenever the brand changes.</p>
+</section>
+<section id="document-check-and-install-the-package" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="document-check-and-install-the-package"><span class="header-section-number">4.2.3</span> Document, Check, and Install the Package</h3>
 <p>Ensure your package is up-to-date by running the following commands:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">check</span>()</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">check</span>()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>These commands generate the latest documentation, check the package for issues, and install it locally.</p>
 </section>
-<section id="preparing-for-github-pages" class="level3" data-number="4.2.3">
-<h3 data-number="4.2.3" class="anchored" data-anchor-id="preparing-for-github-pages"><span class="header-section-number">4.2.3</span> Preparing for GitHub Pages</h3>
-<p>To host the package website on GitHub Pages, you first need to make sure Git tracks the necessary files. Open the <code>.gitignore</code> file in your project directory, find the line that says <code>docs</code>, and remove it. Save the file to allow the <code>docs/</code> folder to be tracked by Git.</p>
+<section id="preparing-for-github-pages" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="preparing-for-github-pages"><span class="header-section-number">4.2.4</span> Preparing for GitHub Pages</h3>
+<p>To host the package website on GitHub Pages, Git has to track the built site. <code>setup_website()</code> removes the <code>docs</code> line from <code>.gitignore</code> for you, so the <code>docs/</code> folder is tracked. Check that the line is gone before you commit.</p>
 </section>
-<section id="updating-github-with-website-files" class="level3" data-number="4.2.4">
-<h3 data-number="4.2.4" class="anchored" data-anchor-id="updating-github-with-website-files"><span class="header-section-number">4.2.4</span> Updating GitHub with Website Files</h3>
+<section id="updating-github-with-website-files" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="updating-github-with-website-files"><span class="header-section-number">4.2.5</span> Updating GitHub with Website Files</h3>
 <p>Go to the “Git” tab in RStudio. You should now see new files in the <code>docs/</code> folder and the updated <code>.gitignore</code> file. Stage these changes, commit them with a message like “Add pkgdown website files,” and push the updates to GitHub.</p>
 </section>
-<section id="setting-up-github-pages" class="level3" data-number="4.2.5">
-<h3 data-number="4.2.5" class="anchored" data-anchor-id="setting-up-github-pages"><span class="header-section-number">4.2.5</span> Setting Up GitHub Pages</h3>
+<section id="setting-up-github-pages" class="level3" data-number="4.2.6">
+<h3 data-number="4.2.6" class="anchored" data-anchor-id="setting-up-github-pages"><span class="header-section-number">4.2.6</span> Setting Up GitHub Pages</h3>
 <p>To activate the website, open your GitHub repository in a web browser. Go to “Settings” &gt; “Pages.” Under “Source,” select the branch where your <code>docs/</code> folder resides (usually “main” or “master”) and set the folder to <code>/docs</code>. Finally, click “Save.”</p>
 <p>Your package website will now be live at <code>https://yourusername.github.io/yourrepositoryname/</code>.</p>
 <p>Remember, if you make significant changes to your package or documentation, you may need to rebuild the website by running <code>pkgdown::build_site()</code> and pushing the updated <code>docs/</code> folder to GitHub.</p>
