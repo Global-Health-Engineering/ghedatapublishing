@@ -4,10 +4,18 @@ Everything starts with a dataset that you want to publish. You might even have s
 
 ![](images/datapreparation.png){fig-align="center" style="border: 1px solid black;"}
 
-As a first step, you need to create a data directory where all datasets are stored in one place. To do this, open your R console within your project and type and execute the following command:
+Before the data, add the check that every push to GitHub will run. Open your R console within your project and execute:
 
 ```{r}
 library(washr)
+setup_ci()
+```
+
+This writes a GitHub Actions workflow that runs `R CMD check` on every push and pull request, on macOS, Windows and Linux. The openwashdata review standard requires it, and your package now meets that part of the standard from its first commit.
+
+As a first step for the data, you need to create a data directory where all datasets are stored in one place. In your R console, execute:
+
+```{r}
 setup_rawdata()
 ```
   

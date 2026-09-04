@@ -250,11 +250,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#fair-documentation" id="toc-fair-documentation" class="nav-link" data-scroll-target="#fair-documentation"><span class="header-section-number">3.3</span> FAIR Documentation</a>
   <ul class="collapse">
-  <li><a href="#adding-metadata-files" id="toc-adding-metadata-files" class="nav-link" data-scroll-target="#adding-metadata-files"><span class="header-section-number">3.3.1</span> Adding Metadata files</a></li>
-  <li><a href="#updating-metadata-files" id="toc-updating-metadata-files" class="nav-link" data-scroll-target="#updating-metadata-files"><span class="header-section-number">3.3.2</span> Updating Metadata Files</a></li>
-  <li><a href="#adding-creators" id="toc-adding-creators" class="nav-link" data-scroll-target="#adding-creators"><span class="header-section-number">3.3.3</span> Adding creators</a></li>
-  <li><a href="#creating-json-ld-documentation" id="toc-creating-json-ld-documentation" class="nav-link" data-scroll-target="#creating-json-ld-documentation"><span class="header-section-number">3.3.4</span> Creating JSON-LD documentation</a></li>
-  <li><a href="#final-documentation-check" id="toc-final-documentation-check" class="nav-link" data-scroll-target="#final-documentation-check"><span class="header-section-number">3.3.5</span> Final Documentation Check</a></li>
+  <li><a href="#keywords-and-coverage" id="toc-keywords-and-coverage" class="nav-link" data-scroll-target="#keywords-and-coverage"><span class="header-section-number">3.3.1</span> Keywords and coverage</a></li>
+  <li><a href="#generating-the-metadata" id="toc-generating-the-metadata" class="nav-link" data-scroll-target="#generating-the-metadata"><span class="header-section-number">3.3.2</span> Generating the metadata</a></li>
+  <li><a href="#final-documentation-check" id="toc-final-documentation-check" class="nav-link" data-scroll-target="#final-documentation-check"><span class="header-section-number">3.3.3</span> Final Documentation Check</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/edit/main/data_documentation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Global-Health-Engineering/ghedatapublishing/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -371,53 +369,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="fair-documentation" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="fair-documentation"><span class="header-section-number">3.3</span> FAIR Documentation</h2>
-<p>The following steps are used to enrich and make metadata from your package more accessible to other users as well as search engines that index your website.</p>
-<section id="adding-metadata-files" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="adding-metadata-files"><span class="header-section-number">3.3.1</span> Adding Metadata files</h3>
-<p>Add metadata files that conform to <a href="https://docs.ropensci.org/dataspice/index.html"><code>dataspice</code></a>, a lightweight metadata format for researchers. In your R console run:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_metadata</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>This function will create supporting metadata files in the data/metadata folder of your package. The following metadata files are added:</p>
-<ul>
-<li>Bibliography (Temporal and Geographic Coverage, Citation, Keywords, Funding, and Licensing)</li>
-<li>Access (Access details for processed data)</li>
-<li>Creators (Author(s))</li>
-<li>Attributes (Description of variables in the dataset)</li>
-</ul>
+<p>One function derives the machine readable metadata of your package from the files you have already written: <code>DESCRIPTION</code>, <code>data-raw/dictionary.csv</code>, <code>CITATION.cff</code> and the exports in <code>inst/extdata</code>. Nothing is edited by hand; when a value is wrong, change its source and run the function again.</p>
+<section id="keywords-and-coverage" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="keywords-and-coverage"><span class="header-section-number">3.3.1</span> Keywords and coverage</h3>
+<p>Three facts have no other home, so they live in <code>DESCRIPTION</code>. Open the file and add three lines, with your own values:</p>
+<pre><code>X-schema.org-keywords: sanitation, faecal sludge, Kampala
+X-schema.org-spatialCoverage: Kampala, Uganda
+X-schema.org-temporalCoverage: 2022-03-01/2022-09-30</code></pre>
+<p>The keywords are a comma separated list. The spatial coverage is a place name. The temporal coverage is the first and the last date of the data, separated by a slash.</p>
 </section>
-<section id="updating-metadata-files" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="updating-metadata-files"><span class="header-section-number">3.3.2</span> Updating Metadata Files</h3>
-<p>Metadata files are enriched automatically from existing metadata generated using all previous documentation steps from this guide. To do this, in your R console run:</p>
+<section id="generating-the-metadata" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="generating-the-metadata"><span class="header-section-number">3.3.2</span> Generating the metadata</h3>
+<p>In your R console run:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update_metadata</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>Note: This function may report errors if all previous steps in the guide are not followed correctly!</strong></p>
-<p>After running the function, please open all metadata files to update blank fields as required.</p>
+<p>The function writes a schema.org description of your dataset as JSON-LD into <code>pkgdown/templates/in-header.html</code>. The website build in the next chapter embeds it in the head of every page, where dataset search engines such as Google Dataset Search read it. The function ends with a list of the fields it could not fill and where to fill them.</p>
+<p>Run it again after every change to <code>DESCRIPTION</code>, the dictionary or the exports, and once more after the DOI exists (see <a href="creating_doi.html" class="quarto-xref"><span>Chapter 5</span></a>). A second run with nothing changed writes nothing.</p>
 </section>
-<section id="adding-creators" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="adding-creators"><span class="header-section-number">3.3.3</span> Adding creators</h3>
-<p>In your R console, run:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_creator</span>(<span class="at">name=</span><span class="st">"Jane Doe"</span>, <span class="at">email=</span><span class="st">"jane.doe@mail.org"</span>, <span class="at">affiliation=</span><span class="st">"Openwashdata"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>This allows addition of contributors. Run the function as many times as required to add contributors.</p>
-</section>
-<section id="creating-json-ld-documentation" class="level3" data-number="3.3.4">
-<h3 data-number="3.3.4" class="anchored" data-anchor-id="creating-json-ld-documentation"><span class="header-section-number">3.3.4</span> Creating JSON-LD documentation</h3>
-<p>JSON-LD versions of your package documentation allow search engines to index and find your website. This is an optional step if you plan to publish a website (next step in this guide) for your data package. To create a <code>metadata.json</code> file, simply run:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_jsonld</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>This will generate the JSON-LD file in the appropriate format and store it in the <code>inst/extdata</code> folder.</p>
-</section>
-<section id="final-documentation-check" class="level3" data-number="3.3.5">
-<h3 data-number="3.3.5" class="anchored" data-anchor-id="final-documentation-check"><span class="header-section-number">3.3.5</span> Final Documentation Check</h3>
+<section id="final-documentation-check" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="final-documentation-check"><span class="header-section-number">3.3.3</span> Final Documentation Check</h3>
 <p>To complete the process, run the following commands again:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">check</span>()</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">check</span>()</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>These steps will ensure your package is fully documented, checked for errors, and ready for use.</p>
 
