@@ -6,7 +6,7 @@ The following steps assume that you are a member of GHE on GitHub. If you are no
 
 As your very first step, you have to create a new repository within the Global Health Engineering (hereafter referred to as GHE) organization on GitHub. You can do this [here](https://github.com/Global-Health-Engineering).
 
-Choose a name for your repository, make it public if you're data is not confidential/sensitive and click on "Create repository". For now, you don't need a README, .gitignore file or a license. You'll add these at a later stage.
+Choose a name for your repository, make it public if your data is not confidential/sensitive and click on "Create repository". For now, you don't need a README, .gitignore file or a license. You'll add these at a later stage.
 
 Once the repository is initialized, go back to RStudio and check if the [`devtools`](https://devtools.r-lib.org/) and [`usethis`](https://usethis.r-lib.org/) packages are installed. If not, please install/update them now as some of their functions are needed in the next steps.
 
@@ -34,7 +34,7 @@ git branch -M main
 git push -u origin main
 ```
 
-If everything went well, you're local repository (on your computer) should now be connected to the remote repository (on GitHub) which allows you to push and pull changes and to invite collaborators.
+If everything went well, your local repository (on your computer) should now be connected to the remote repository (on GitHub) which allows you to push and pull changes and to invite collaborators.
 
 ![](images/repos.png){fig-align="center" width=40% height=40% style="border: 1px solid black;"}
 
