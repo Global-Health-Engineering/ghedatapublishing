@@ -64,7 +64,7 @@ To complete your package documentation, you’ll need to update the `DESCRIPTION
 In your R console, add yourself as the author and maintainer by running:
 
 ```{r}
-use_author(
+usethis::use_author(
   given = "Your First Name", 
   family = "Your Last Name", 
   role = c("aut", "cre"), 
@@ -82,7 +82,7 @@ To ensure proper credit is given, create a new issue in your GitHub repository t
 For each additional contributor, run a similar command:
 
 ```{r}
-use_author(given = "Coauthor First Name", family = "Coauthor Last Name", role = "aut")
+usethis::use_author(given = "Coauthor First Name", family = "Coauthor Last Name", role = "aut")
 ```
 
 ### Updating the DESCRIPTION File

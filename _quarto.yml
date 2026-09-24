@@ -20,7 +20,7 @@ book:
   repo-url: https://github.com/Global-Health-Engineering/ghedatapublishing
   repo-branch: main
   repo-actions: [edit, issue]
-  downloads: [pdf, epub]
+  downloads: [pdf]
   sharing: [twitter, facebook]
 
   chapters:
